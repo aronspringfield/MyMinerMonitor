@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yrU-KB-cKi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Wallet View Controller-->
+        <scene sceneID="Jrc-7P-5YE">
+            <objects>
+                <viewController id="yrU-KB-cKi" customClass="CreateWalletViewController" customModule="myminermonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vEU-ch-cUd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlc-P7-7QC">
+                                <rect key="frame" x="8" y="84" width="33.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pool Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YBn-za-dvL">
+                                <rect key="frame" x="81" y="79.5" width="286" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGj-he-xc1">
+                                <rect key="frame" x="8" y="150" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="wallet address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dwT-Mw-3cW">
+                                <rect key="frame" x="81" y="145" width="286" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCv-Eo-lcJ">
+                                <rect key="frame" x="0.0" y="191" width="177.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XHw-EB-W05"/>
+                                </constraints>
+                                <state key="normal" image="button_qr_code"/>
+                                <connections>
+                                    <action selector="didPressQrCode:" destination="yrU-KB-cKi" eventType="touchUpInside" id="Cai-rE-ndG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YB-aI-cqZ">
+                                <rect key="frame" x="197.5" y="191" width="177.5" height="50"/>
+                                <state key="normal" image="button_paste"/>
+                                <connections>
+                                    <action selector="didPressCopyFromClipboard:" destination="yrU-KB-cKi" eventType="touchUpInside" id="vXY-io-Bw3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkT-R4-mF1">
+                                <rect key="frame" x="164" y="297" width="46" height="30"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressCreate:" destination="yrU-KB-cKi" eventType="touchUpInside" id="ndF-Zg-mWB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xkT-R4-mF1" firstAttribute="centerX" secondItem="cVt-1s-WL7" secondAttribute="centerX" id="20x-kA-E2H"/>
+                            <constraint firstItem="tCv-Eo-lcJ" firstAttribute="leading" secondItem="cVt-1s-WL7" secondAttribute="leading" id="2UU-Dr-d2T"/>
+                            <constraint firstItem="xkT-R4-mF1" firstAttribute="top" secondItem="tCv-Eo-lcJ" secondAttribute="bottom" constant="56" id="42Z-DQ-0hP"/>
+                            <constraint firstItem="dwT-Mw-3cW" firstAttribute="centerY" secondItem="SGj-he-xc1" secondAttribute="centerY" id="9US-fI-gdf"/>
+                            <constraint firstItem="YBn-za-dvL" firstAttribute="centerY" secondItem="qlc-P7-7QC" secondAttribute="centerY" id="DyI-SY-lge"/>
+                            <constraint firstItem="4YB-aI-cqZ" firstAttribute="leading" secondItem="tCv-Eo-lcJ" secondAttribute="trailing" constant="20" id="LLf-0E-ijd"/>
+                            <constraint firstItem="tCv-Eo-lcJ" firstAttribute="top" secondItem="SGj-he-xc1" secondAttribute="bottom" constant="20" id="Nem-zR-PE8"/>
+                            <constraint firstItem="YBn-za-dvL" firstAttribute="leading" secondItem="SGj-he-xc1" secondAttribute="trailing" constant="10" id="WQI-5A-xoM"/>
+                            <constraint firstItem="4YB-aI-cqZ" firstAttribute="trailing" secondItem="cVt-1s-WL7" secondAttribute="trailing" id="bfd-pn-QKJ"/>
+                            <constraint firstItem="SGj-he-xc1" firstAttribute="leading" secondItem="cVt-1s-WL7" secondAttribute="leading" constant="8" id="jCV-Pz-zZG"/>
+                            <constraint firstItem="cVt-1s-WL7" firstAttribute="trailing" secondItem="YBn-za-dvL" secondAttribute="trailing" constant="8" id="kVB-yB-YBy"/>
+                            <constraint firstItem="SGj-he-xc1" firstAttribute="top" secondItem="qlc-P7-7QC" secondAttribute="bottom" constant="45" id="lct-SN-HKx"/>
+                            <constraint firstItem="dwT-Mw-3cW" firstAttribute="leading" secondItem="SGj-he-xc1" secondAttribute="trailing" constant="10" id="lte-Fk-43m"/>
+                            <constraint firstItem="tCv-Eo-lcJ" firstAttribute="width" secondItem="4YB-aI-cqZ" secondAttribute="width" id="ms9-fi-7Nt"/>
+                            <constraint firstItem="cVt-1s-WL7" firstAttribute="trailing" secondItem="dwT-Mw-3cW" secondAttribute="trailing" constant="8" id="ntp-68-cva"/>
+                            <constraint firstItem="4YB-aI-cqZ" firstAttribute="height" secondItem="tCv-Eo-lcJ" secondAttribute="height" id="qDi-DX-CUQ"/>
+                            <constraint firstItem="qlc-P7-7QC" firstAttribute="leading" secondItem="cVt-1s-WL7" secondAttribute="leading" constant="8" id="smo-Ts-M5y"/>
+                            <constraint firstItem="qlc-P7-7QC" firstAttribute="top" secondItem="cVt-1s-WL7" secondAttribute="top" constant="20" id="tQ8-tq-QLZ"/>
+                            <constraint firstItem="4YB-aI-cqZ" firstAttribute="centerY" secondItem="tCv-Eo-lcJ" secondAttribute="centerY" id="tbG-J8-mYI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cVt-1s-WL7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ovp-cR-XlR">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ljo-1q-aNn" userLabel="Cancel">
+                            <connections>
+                                <action selector="didPressCancel:" destination="yrU-KB-cKi" id="oou-X0-or4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="poolNameTextField" destination="YBn-za-dvL" id="H16-t3-gIc"/>
+                        <outlet property="walletAddressLabel" destination="dwT-Mw-3cW" id="Ggj-pU-ggU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12B-gv-RUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="568.79999999999995" y="41.829085457271368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fxj-aB-0pL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9zO-8G-Ji0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SSw-Nk-7hT">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yrU-KB-cKi" kind="relationship" relationship="rootViewController" id="Nsp-Hb-cgl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERG-Di-b7y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-334" y="68"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_paste" width="25" height="25"/>
+        <image name="button_qr_code" width="25" height="25"/>
+    </resources>
+</document>

@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C2AFE111F705C1E00796E9F /* Double+CurrencyToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2AFE101F705C1E00796E9F /* Double+CurrencyToString.swift */; };
+		9C4579AA1F79A2720062676F /* CryptoPriceIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4579A91F79A2720062676F /* CryptoPriceIndex.swift */; };
+		9C4579AC1F817CDF0062676F /* PortfolioWalletLabelRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4579AB1F817CDF0062676F /* PortfolioWalletLabelRowView.swift */; };
+		9C60835A1F60734700FFBAC4 /* PoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083591F60734700FFBAC4 /* PoolRequest.swift */; };
+		9C60835D1F60752A00FFBAC4 /* ZPoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60835C1F60752A00FFBAC4 /* ZPoolPoolRequest.swift */; };
+		9C60835F1F6087BF00FFBAC4 /* YiimpPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60835E1F6087BF00FFBAC4 /* YiimpPoolRequest.swift */; };
+		9C6083611F6087CD00FFBAC4 /* HashRefineryPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083601F6087CD00FFBAC4 /* HashRefineryPoolRequest.swift */; };
+		9C6083631F6094EC00FFBAC4 /* PortfolioPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083621F6094EC00FFBAC4 /* PortfolioPickerViewController.swift */; };
+		9C6083691F60995100FFBAC4 /* OpenPortfolioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083681F60995100FFBAC4 /* OpenPortfolioTableViewCell.swift */; };
+		9C60836E1F61D84700FFBAC4 /* PortfolioPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60836D1F61D84700FFBAC4 /* PortfolioPickerDataSource.swift */; };
+		9C6083711F6304AF00FFBAC4 /* DataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C60836F1F6304AF00FFBAC4 /* DataStore.xcdatamodeld */; };
+		9C6083761F6306D900FFBAC4 /* Portfolio+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083721F6306D900FFBAC4 /* Portfolio+CoreDataClass.swift */; };
+		9C6083771F6306D900FFBAC4 /* Portfolio+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083731F6306D900FFBAC4 /* Portfolio+CoreDataProperties.swift */; };
+		9C6083781F6306D900FFBAC4 /* Wallet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083741F6306D900FFBAC4 /* Wallet+CoreDataClass.swift */; };
+		9C6083791F6306D900FFBAC4 /* Wallet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083751F6306D900FFBAC4 /* Wallet+CoreDataProperties.swift */; };
+		9C7675571F70791C00F46E7F /* AHashPoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7675561F70791C00F46E7F /* AHashPoolPoolRequest.swift */; };
+		9C7675591F707ACF00F46E7F /* NiceHashPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7675581F707ACF00F46E7F /* NiceHashPoolRequest.swift */; };
+		9C7D2AD21F63EA46006E5324 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D2AD11F63EA46006E5324 /* DataStore.swift */; };
+		9C7D2AD51F63F72F006E5324 /* CreatePortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D2AD41F63F72F006E5324 /* CreatePortfolioViewController.swift */; };
+		9CCE2F721F5F1C1100E934AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE2F711F5F1C1100E934AF /* AppDelegate.swift */; };
+		9CCE2F741F5F1C1100E934AF /* AppLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE2F731F5F1C1100E934AF /* AppLoadingViewController.swift */; };
+		9CCE2F771F5F1C1100E934AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCE2F751F5F1C1100E934AF /* Main.storyboard */; };
+		9CCE2F791F5F1C1100E934AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CCE2F781F5F1C1100E934AF /* Assets.xcassets */; };
+		9CCE2F7C1F5F1C1100E934AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCE2F7A1F5F1C1100E934AF /* LaunchScreen.storyboard */; };
+		9CCE2F871F5F1C1100E934AF /* myminermonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE2F861F5F1C1100E934AF /* myminermonitorTests.swift */; };
+		9CCF8EC51F6E9F1C00DE29FC /* CreateWallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCF8EC41F6E9F1C00DE29FC /* CreateWallet.storyboard */; };
+		9CCF8EC71F6EA2C200DE29FC /* CreateWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF8EC61F6EA2C200DE29FC /* CreateWalletViewController.swift */; };
+		9CE89DC31F672A8E00CDD0BC /* CreatePortfolio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE89DC21F672A8E00CDD0BC /* CreatePortfolio.storyboard */; };
+		9CE89DC51F69B5D800CDD0BC /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE89DC41F69B5D800CDD0BC /* DataStructures.swift */; };
+		9CE89DC71F69B62800CDD0BC /* LoadingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE89DC61F69B62800CDD0BC /* LoadingScreen.storyboard */; };
+		9CE89DC91F6C4E1B00CDD0BC /* PortfolioViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE89DC81F6C4E1B00CDD0BC /* PortfolioViewerViewController.swift */; };
+		9CE89DCB1F6C4E3000CDD0BC /* PortfolioViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE89DCA1F6C4E3000CDD0BC /* PortfolioViewer.storyboard */; };
+		9CE89DCD1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE89DCC1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift */; };
+		9CE89DCF1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE89DCE1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift */; };
+		9CFBCF251F85857900D48465 /* WalletSnapshot+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFBCF231F85857900D48465 /* WalletSnapshot+CoreDataClass.swift */; };
+		9CFBCF261F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFBCF241F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9CCE2F831F5F1C1100E934AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CCE2F661F5F1C1100E934AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CCE2F6D1F5F1C1100E934AF;
+			remoteInfo = myminermonitor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9C2AFE101F705C1E00796E9F /* Double+CurrencyToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+CurrencyToString.swift"; sourceTree = "<group>"; };
+		9C4579A91F79A2720062676F /* CryptoPriceIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPriceIndex.swift; sourceTree = "<group>"; };
+		9C4579AB1F817CDF0062676F /* PortfolioWalletLabelRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioWalletLabelRowView.swift; sourceTree = "<group>"; };
+		9C6083591F60734700FFBAC4 /* PoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolRequest.swift; sourceTree = "<group>"; };
+		9C60835C1F60752A00FFBAC4 /* ZPoolPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPoolPoolRequest.swift; sourceTree = "<group>"; };
+		9C60835E1F6087BF00FFBAC4 /* YiimpPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YiimpPoolRequest.swift; sourceTree = "<group>"; };
+		9C6083601F6087CD00FFBAC4 /* HashRefineryPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashRefineryPoolRequest.swift; sourceTree = "<group>"; };
+		9C6083621F6094EC00FFBAC4 /* PortfolioPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPickerViewController.swift; sourceTree = "<group>"; };
+		9C6083681F60995100FFBAC4 /* OpenPortfolioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPortfolioTableViewCell.swift; sourceTree = "<group>"; };
+		9C60836D1F61D84700FFBAC4 /* PortfolioPickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPickerDataSource.swift; sourceTree = "<group>"; };
+		9C6083701F6304AF00FFBAC4 /* DataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataStore.xcdatamodel; sourceTree = "<group>"; };
+		9C6083721F6306D900FFBAC4 /* Portfolio+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Portfolio+CoreDataClass.swift"; path = "../Portfolio+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9C6083731F6306D900FFBAC4 /* Portfolio+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Portfolio+CoreDataProperties.swift"; path = "../Portfolio+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9C6083741F6306D900FFBAC4 /* Wallet+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Wallet+CoreDataClass.swift"; path = "../Wallet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9C6083751F6306D900FFBAC4 /* Wallet+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Wallet+CoreDataProperties.swift"; path = "../Wallet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9C7675561F70791C00F46E7F /* AHashPoolPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHashPoolPoolRequest.swift; sourceTree = "<group>"; };
+		9C7675581F707ACF00F46E7F /* NiceHashPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceHashPoolRequest.swift; sourceTree = "<group>"; };
+		9C7D2AD11F63EA46006E5324 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		9C7D2AD41F63F72F006E5324 /* CreatePortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePortfolioViewController.swift; sourceTree = "<group>"; };
+		9CCE2F6E1F5F1C1100E934AF /* myminermonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myminermonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CCE2F711F5F1C1100E934AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9CCE2F731F5F1C1100E934AF /* AppLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadingViewController.swift; sourceTree = "<group>"; };
+		9CCE2F761F5F1C1100E934AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9CCE2F781F5F1C1100E934AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9CCE2F7B1F5F1C1100E934AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9CCE2F7D1F5F1C1100E934AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CCE2F821F5F1C1100E934AF /* myminermonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myminermonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CCE2F861F5F1C1100E934AF /* myminermonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myminermonitorTests.swift; sourceTree = "<group>"; };
+		9CCE2F881F5F1C1100E934AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CCF8EC41F6E9F1C00DE29FC /* CreateWallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateWallet.storyboard; sourceTree = "<group>"; };
+		9CCF8EC61F6EA2C200DE29FC /* CreateWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewController.swift; sourceTree = "<group>"; };
+		9CE89DC21F672A8E00CDD0BC /* CreatePortfolio.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePortfolio.storyboard; sourceTree = "<group>"; };
+		9CE89DC41F69B5D800CDD0BC /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		9CE89DC61F69B62800CDD0BC /* LoadingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingScreen.storyboard; sourceTree = "<group>"; };
+		9CE89DC81F6C4E1B00CDD0BC /* PortfolioViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewerViewController.swift; sourceTree = "<group>"; };
+		9CE89DCA1F6C4E3000CDD0BC /* PortfolioViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PortfolioViewer.storyboard; sourceTree = "<group>"; };
+		9CE89DCC1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioWalletTableViewCell.swift; sourceTree = "<group>"; };
+		9CE89DCE1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewerTableViewDataSource.swift; sourceTree = "<group>"; };
+		9CFBCF231F85857900D48465 /* WalletSnapshot+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletSnapshot+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9CFBCF241F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletSnapshot+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CCE2F6B1F5F1C1100E934AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CCE2F7F1F5F1C1100E934AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C60835B1F60750B00FFBAC4 /* Pool Requests */ = {
+			isa = PBXGroup;
+			children = (
+				9C6083591F60734700FFBAC4 /* PoolRequest.swift */,
+				9C60835C1F60752A00FFBAC4 /* ZPoolPoolRequest.swift */,
+				9C60835E1F6087BF00FFBAC4 /* YiimpPoolRequest.swift */,
+				9C6083601F6087CD00FFBAC4 /* HashRefineryPoolRequest.swift */,
+				9C7675561F70791C00F46E7F /* AHashPoolPoolRequest.swift */,
+				9C7675581F707ACF00F46E7F /* NiceHashPoolRequest.swift */,
+			);
+			name = "Pool Requests";
+			sourceTree = "<group>";
+		};
+		9C60836C1F61D7FA00FFBAC4 /* Portfolio Picker */ = {
+			isa = PBXGroup;
+			children = (
+				9C6083621F6094EC00FFBAC4 /* PortfolioPickerViewController.swift */,
+				9C60836D1F61D84700FFBAC4 /* PortfolioPickerDataSource.swift */,
+				9C6083681F60995100FFBAC4 /* OpenPortfolioTableViewCell.swift */,
+			);
+			name = "Portfolio Picker";
+			sourceTree = "<group>";
+		};
+		9C60837A1F63080A00FFBAC4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9C6083721F6306D900FFBAC4 /* Portfolio+CoreDataClass.swift */,
+				9C6083731F6306D900FFBAC4 /* Portfolio+CoreDataProperties.swift */,
+				9C6083741F6306D900FFBAC4 /* Wallet+CoreDataClass.swift */,
+				9C6083751F6306D900FFBAC4 /* Wallet+CoreDataProperties.swift */,
+				9CFBCF231F85857900D48465 /* WalletSnapshot+CoreDataClass.swift */,
+				9CFBCF241F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift */,
+				9C7D2AD11F63EA46006E5324 /* DataStore.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		9C7D2AD31F63EF8C006E5324 /* Portfolio Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				9CE89DC81F6C4E1B00CDD0BC /* PortfolioViewerViewController.swift */,
+				9CE89DCE1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift */,
+				9CE89DCC1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift */,
+				9C4579AB1F817CDF0062676F /* PortfolioWalletLabelRowView.swift */,
+			);
+			name = "Portfolio Viewer";
+			sourceTree = "<group>";
+		};
+		9CCE2F651F5F1C1100E934AF = {
+			isa = PBXGroup;
+			children = (
+				9CCE2F701F5F1C1100E934AF /* myminermonitor */,
+				9CCE2F851F5F1C1100E934AF /* myminermonitorTests */,
+				9CCE2F6F1F5F1C1100E934AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9CCE2F6F1F5F1C1100E934AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CCE2F6E1F5F1C1100E934AF /* myminermonitor.app */,
+				9CCE2F821F5F1C1100E934AF /* myminermonitorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CCE2F701F5F1C1100E934AF /* myminermonitor */ = {
+			isa = PBXGroup;
+			children = (
+				9CCE2F711F5F1C1100E934AF /* AppDelegate.swift */,
+				9CE89DC41F69B5D800CDD0BC /* DataStructures.swift */,
+				9CCE2F731F5F1C1100E934AF /* AppLoadingViewController.swift */,
+				9C2AFE101F705C1E00796E9F /* Double+CurrencyToString.swift */,
+				9C4579A91F79A2720062676F /* CryptoPriceIndex.swift */,
+				9C60837A1F63080A00FFBAC4 /* CoreData */,
+				9C60835B1F60750B00FFBAC4 /* Pool Requests */,
+				9C60836C1F61D7FA00FFBAC4 /* Portfolio Picker */,
+				9C7D2AD41F63F72F006E5324 /* CreatePortfolioViewController.swift */,
+				9C7D2AD31F63EF8C006E5324 /* Portfolio Viewer */,
+				9CCF8EC61F6EA2C200DE29FC /* CreateWalletViewController.swift */,
+				9C60836F1F6304AF00FFBAC4 /* DataStore.xcdatamodeld */,
+				9CCE2F781F5F1C1100E934AF /* Assets.xcassets */,
+				9CCE2F751F5F1C1100E934AF /* Main.storyboard */,
+				9CE89DC21F672A8E00CDD0BC /* CreatePortfolio.storyboard */,
+				9CCF8EC41F6E9F1C00DE29FC /* CreateWallet.storyboard */,
+				9CE89DCA1F6C4E3000CDD0BC /* PortfolioViewer.storyboard */,
+				9CCE2F7A1F5F1C1100E934AF /* LaunchScreen.storyboard */,
+				9CE89DC61F69B62800CDD0BC /* LoadingScreen.storyboard */,
+				9CCE2F7D1F5F1C1100E934AF /* Info.plist */,
+			);
+			path = myminermonitor;
+			sourceTree = "<group>";
+		};
+		9CCE2F851F5F1C1100E934AF /* myminermonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				9CCE2F861F5F1C1100E934AF /* myminermonitorTests.swift */,
+				9CCE2F881F5F1C1100E934AF /* Info.plist */,
+			);
+			path = myminermonitorTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9CCE2F6D1F5F1C1100E934AF /* myminermonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CCE2F8B1F5F1C1100E934AF /* Build configuration list for PBXNativeTarget "myminermonitor" */;
+			buildPhases = (
+				9CCE2F6A1F5F1C1100E934AF /* Sources */,
+				9CCE2F6B1F5F1C1100E934AF /* Frameworks */,
+				9CCE2F6C1F5F1C1100E934AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = myminermonitor;
+			productName = myminermonitor;
+			productReference = 9CCE2F6E1F5F1C1100E934AF /* myminermonitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9CCE2F811F5F1C1100E934AF /* myminermonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CCE2F8E1F5F1C1100E934AF /* Build configuration list for PBXNativeTarget "myminermonitorTests" */;
+			buildPhases = (
+				9CCE2F7E1F5F1C1100E934AF /* Sources */,
+				9CCE2F7F1F5F1C1100E934AF /* Frameworks */,
+				9CCE2F801F5F1C1100E934AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CCE2F841F5F1C1100E934AF /* PBXTargetDependency */,
+			);
+			name = myminermonitorTests;
+			productName = myminermonitorTests;
+			productReference = 9CCE2F821F5F1C1100E934AF /* myminermonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CCE2F661F5F1C1100E934AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Aron Springfield";
+				TargetAttributes = {
+					9CCE2F6D1F5F1C1100E934AF = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4K9TLBSL3M;
+						ProvisioningStyle = Automatic;
+					};
+					9CCE2F811F5F1C1100E934AF = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9CCE2F6D1F5F1C1100E934AF;
+					};
+				};
+			};
+			buildConfigurationList = 9CCE2F691F5F1C1100E934AF /* Build configuration list for PBXProject "myminermonitor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9CCE2F651F5F1C1100E934AF;
+			productRefGroup = 9CCE2F6F1F5F1C1100E934AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CCE2F6D1F5F1C1100E934AF /* myminermonitor */,
+				9CCE2F811F5F1C1100E934AF /* myminermonitorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9CCE2F6C1F5F1C1100E934AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CCE2F7C1F5F1C1100E934AF /* LaunchScreen.storyboard in Resources */,
+				9CCE2F791F5F1C1100E934AF /* Assets.xcassets in Resources */,
+				9CCE2F771F5F1C1100E934AF /* Main.storyboard in Resources */,
+				9CE89DCB1F6C4E3000CDD0BC /* PortfolioViewer.storyboard in Resources */,
+				9CE89DC31F672A8E00CDD0BC /* CreatePortfolio.storyboard in Resources */,
+				9CE89DC71F69B62800CDD0BC /* LoadingScreen.storyboard in Resources */,
+				9CCF8EC51F6E9F1C00DE29FC /* CreateWallet.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CCE2F801F5F1C1100E934AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9CCE2F6A1F5F1C1100E934AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C6083781F6306D900FFBAC4 /* Wallet+CoreDataClass.swift in Sources */,
+				9CE89DC91F6C4E1B00CDD0BC /* PortfolioViewerViewController.swift in Sources */,
+				9CFBCF261F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift in Sources */,
+				9C7D2AD21F63EA46006E5324 /* DataStore.swift in Sources */,
+				9CE89DCF1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift in Sources */,
+				9C6083761F6306D900FFBAC4 /* Portfolio+CoreDataClass.swift in Sources */,
+				9C6083631F6094EC00FFBAC4 /* PortfolioPickerViewController.swift in Sources */,
+				9C4579AC1F817CDF0062676F /* PortfolioWalletLabelRowView.swift in Sources */,
+				9C2AFE111F705C1E00796E9F /* Double+CurrencyToString.swift in Sources */,
+				9C4579AA1F79A2720062676F /* CryptoPriceIndex.swift in Sources */,
+				9C6083691F60995100FFBAC4 /* OpenPortfolioTableViewCell.swift in Sources */,
+				9C7675571F70791C00F46E7F /* AHashPoolPoolRequest.swift in Sources */,
+				9CE89DCD1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift in Sources */,
+				9C6083611F6087CD00FFBAC4 /* HashRefineryPoolRequest.swift in Sources */,
+				9C6083771F6306D900FFBAC4 /* Portfolio+CoreDataProperties.swift in Sources */,
+				9C7D2AD51F63F72F006E5324 /* CreatePortfolioViewController.swift in Sources */,
+				9CE89DC51F69B5D800CDD0BC /* DataStructures.swift in Sources */,
+				9CCE2F741F5F1C1100E934AF /* AppLoadingViewController.swift in Sources */,
+				9C6083711F6304AF00FFBAC4 /* DataStore.xcdatamodeld in Sources */,
+				9C60835F1F6087BF00FFBAC4 /* YiimpPoolRequest.swift in Sources */,
+				9CCF8EC71F6EA2C200DE29FC /* CreateWalletViewController.swift in Sources */,
+				9C7675591F707ACF00F46E7F /* NiceHashPoolRequest.swift in Sources */,
+				9CCE2F721F5F1C1100E934AF /* AppDelegate.swift in Sources */,
+				9C6083791F6306D900FFBAC4 /* Wallet+CoreDataProperties.swift in Sources */,
+				9C60835D1F60752A00FFBAC4 /* ZPoolPoolRequest.swift in Sources */,
+				9C60835A1F60734700FFBAC4 /* PoolRequest.swift in Sources */,
+				9C60836E1F61D84700FFBAC4 /* PortfolioPickerDataSource.swift in Sources */,
+				9CFBCF251F85857900D48465 /* WalletSnapshot+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CCE2F7E1F5F1C1100E934AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CCE2F871F5F1C1100E934AF /* myminermonitorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9CCE2F841F5F1C1100E934AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CCE2F6D1F5F1C1100E934AF /* myminermonitor */;
+			targetProxy = 9CCE2F831F5F1C1100E934AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9CCE2F751F5F1C1100E934AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CCE2F761F5F1C1100E934AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9CCE2F7A1F5F1C1100E934AF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CCE2F7B1F5F1C1100E934AF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9CCE2F891F5F1C1100E934AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9CCE2F8A1F5F1C1100E934AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9CCE2F8C1F5F1C1100E934AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4K9TLBSL3M;
+				INFOPLIST_FILE = myminermonitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = aronspringfield.myminermonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9CCE2F8D1F5F1C1100E934AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4K9TLBSL3M;
+				INFOPLIST_FILE = myminermonitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = aronspringfield.myminermonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9CCE2F8F1F5F1C1100E934AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = myminermonitorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = aronspringfield.myminermonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myminermonitor.app/myminermonitor";
+			};
+			name = Debug;
+		};
+		9CCE2F901F5F1C1100E934AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = myminermonitorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = aronspringfield.myminermonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myminermonitor.app/myminermonitor";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9CCE2F691F5F1C1100E934AF /* Build configuration list for PBXProject "myminermonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CCE2F891F5F1C1100E934AF /* Debug */,
+				9CCE2F8A1F5F1C1100E934AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CCE2F8B1F5F1C1100E934AF /* Build configuration list for PBXNativeTarget "myminermonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CCE2F8C1F5F1C1100E934AF /* Debug */,
+				9CCE2F8D1F5F1C1100E934AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CCE2F8E1F5F1C1100E934AF /* Build configuration list for PBXNativeTarget "myminermonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CCE2F8F1F5F1C1100E934AF /* Debug */,
+				9CCE2F901F5F1C1100E934AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C60836F1F6304AF00FFBAC4 /* DataStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C6083701F6304AF00FFBAC4 /* DataStore.xcdatamodel */,
+			);
+			currentVersion = 9C6083701F6304AF00FFBAC4 /* DataStore.xcdatamodel */;
+			path = DataStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9CCE2F661F5F1C1100E934AF /* Project object */;
+}

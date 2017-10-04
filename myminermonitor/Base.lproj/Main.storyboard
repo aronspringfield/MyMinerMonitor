@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yf9-Ic-QkH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Portfolio Picker View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PortfolioPickerViewController" customModule="myminermonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multipool Monitor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooj-ID-u9J">
+                                <rect key="frame" x="106.5" y="84" width="161.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YS9-Dy-pm8">
+                                <rect key="frame" x="24" y="128" width="327" height="487"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qAh-iq-mxn" customClass="PortfolioPickerTableView" customModule="myminermonitor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="487"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OpenPortfolioCell" id="94M-ZI-VF7" userLabel="OpenPortfolioCell" customClass="OpenPortfolioTableViewCell" customModule="myminermonitor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="327" height="70"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="94M-ZI-VF7" id="NLC-Nn-s71">
+                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="69.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portfolio Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y97-Te-kwt">
+                                                            <rect key="frame" x="16" y="24.5" width="114" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="y97-Te-kwt" firstAttribute="centerY" secondItem="NLC-Nn-s71" secondAttribute="centerY" id="48k-S4-9BQ"/>
+                                                        <constraint firstItem="y97-Te-kwt" firstAttribute="leading" secondItem="NLC-Nn-s71" secondAttribute="leadingMargin" constant="8" id="X2u-mD-8rq"/>
+                                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="y97-Te-kwt" secondAttribute="trailing" id="yjV-JK-O0n"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="portfolioNameLabel" destination="y97-Te-kwt" id="j5s-qN-Egj"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreatePortfolioCell" id="fc3-nx-dIW">
+                                                <rect key="frame" x="0.0" y="98" width="327" height="70"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fc3-nx-dIW" id="bmW-D3-idw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="69.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I43-JW-Xhu">
+                                                            <rect key="frame" x="8" y="24.5" width="100" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_add" translatesAutoresizingMaskIntoConstraints="NO" id="4PL-pO-N9E">
+                                                            <rect key="frame" x="267" y="13.5" width="44" height="43"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="Hux-oJ-qDy"/>
+                                                                <constraint firstAttribute="width" secondItem="4PL-pO-N9E" secondAttribute="height" multiplier="1:1" constant="1" id="PwU-CP-DFH"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="4PL-pO-N9E" firstAttribute="centerY" secondItem="bmW-D3-idw" secondAttribute="centerY" id="6WP-3S-CYs"/>
+                                                        <constraint firstAttribute="leadingMargin" secondItem="I43-JW-Xhu" secondAttribute="leading" id="8pJ-d6-w6E"/>
+                                                        <constraint firstItem="I43-JW-Xhu" firstAttribute="centerY" secondItem="bmW-D3-idw" secondAttribute="centerY" id="PR2-Pu-N7Q"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="4PL-pO-N9E" secondAttribute="trailing" constant="8" id="Y5i-Wn-QhT"/>
+                                                        <constraint firstItem="4PL-pO-N9E" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I43-JW-Xhu" secondAttribute="trailing" constant="10" id="hOP-sL-zpC"/>
+                                                        <constraint firstItem="4PL-pO-N9E" firstAttribute="width" secondItem="4PL-pO-N9E" secondAttribute="height" multiplier="1:1" constant="1" id="vJe-uN-Aj3"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="kMS-ka-jVG" id="YPy-SL-y6F"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qAh-iq-mxn" secondAttribute="trailing" id="B92-lB-Yjz"/>
+                                    <constraint firstItem="qAh-iq-mxn" firstAttribute="leading" secondItem="YS9-Dy-pm8" secondAttribute="leading" id="M2c-He-dOd"/>
+                                    <constraint firstItem="qAh-iq-mxn" firstAttribute="top" secondItem="YS9-Dy-pm8" secondAttribute="top" id="QMx-SK-5Sq"/>
+                                    <constraint firstAttribute="bottom" secondItem="qAh-iq-mxn" secondAttribute="bottom" id="bcV-CJ-uI0"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bD5-Eb-fRh">
+                                <rect key="frame" x="321" y="623" width="30" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="ⓘ"/>
+                                <connections>
+                                    <action selector="informationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNc-Ab-e7F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YS9-Dy-pm8" firstAttribute="top" secondItem="ooj-ID-u9J" secondAttribute="bottom" constant="20" id="47w-yv-7SD"/>
+                            <constraint firstItem="ooj-ID-u9J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8pB-hc-fPC"/>
+                            <constraint firstItem="ooj-ID-u9J" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Fk2-2J-rIG"/>
+                            <constraint firstItem="bD5-Eb-fRh" firstAttribute="top" secondItem="YS9-Dy-pm8" secondAttribute="bottom" constant="8" id="GA6-dt-Gjr"/>
+                            <constraint firstItem="YS9-Dy-pm8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="XDo-Gt-EuK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bD5-Eb-fRh" secondAttribute="bottom" constant="8" id="oV2-k4-cws"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bD5-Eb-fRh" secondAttribute="trailing" constant="8" id="sJV-kb-ATm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YS9-Dy-pm8" secondAttribute="trailing" constant="8" id="vKO-7K-rcn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wTk-n9-4pn"/>
+                    <connections>
+                        <outlet property="tableView" destination="qAh-iq-mxn" id="OTJ-Yq-Uam"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="kMS-ka-jVG" customClass="PortfolioPickerDataSource" customModule="myminermonitor" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="690"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7nz-BR-ZVh">
+            <objects>
+                <navigationController storyboardIdentifier="PortfolioPickerVC" automaticallyAdjustsScrollViewInsets="NO" id="Yf9-Ic-QkH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nur-8b-5OW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aPU-FU-gy6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYq-S7-j7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="408" y="693"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_add" width="24" height="24"/>
+    </resources>
+</document>
