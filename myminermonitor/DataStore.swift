@@ -46,7 +46,7 @@ class DataStore: NSObject {
         let entity = NSEntityDescription.insertNewObject(forEntityName: "WalletSnapshot",
                                                          into: persistentContainer.viewContext) as! WalletSnapshot
         entity.walletIdentifier = walletIdentifier
-        entity.timestamp = Date()
+        entity.timestamp = NSDate()
         entity.unsold = walletData.unsold
         entity.unpaid = walletData.unpaid
         entity.total = walletData.total
