@@ -27,6 +27,12 @@ public class Wallet: NSManagedObject {
     weak var delegate: WalletStatusDelegate?
     var updateFailed = false
     
+    let secondsInAnHour: Double = 60 * 60
+    let secondsInADay: Double = 60 * 60 * 24
+    var walletSnapshots: [WalletSnapshot]?
+    var profitIn1Hour: Double?
+    var profitIn24Hours: Double?
+    
     var identifier: String {
         get {
             assert(address != nil, "Address is nil but we're accessing the identifier!")
@@ -63,6 +69,10 @@ public class Wallet: NSManagedObject {
             }
         }
     }
+    
+    func isUpdating() -> Bool {
+        return PoolRequest.isRequestActive(for: self)
+    }
 
     private func addWalletSnapshot(with walletData: PoolWalletData) {
         guard let walletIdentifier = self.walletIdentifier else {
@@ -77,9 +87,96 @@ public class Wallet: NSManagedObject {
         self.paid24Hour = snapshot.paid24Hour
         self.balance = snapshot.balance
         self.updatedTimestamp = snapshot.timestamp
+        
+        
+        updateWalletSnapshots()
+        updateRecentEarningAmounts()
     }
     
-    func isUpdating() -> Bool {
-        return PoolRequest.isRequestActive(for: self)
+    func updateWalletSnapshots() {
+        guard let walletIdentifier = walletIdentifier else {
+            assert(false, "We're trying to update wallet snapshots without a walletIdentifier!?")
+            return
+        }
+        let fetchRequest: NSFetchRequest<WalletSnapshot> = WalletSnapshot.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "walletIdentifier == %@", walletIdentifier)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+        
+        let moc = DataStore.sharedInstance.persistentContainer.viewContext
+        do {
+            let results = try moc.fetch(fetchRequest)
+            self.walletSnapshots = results
+        }
+        catch {
+            // TODO
+        }
+    }
+    
+    func updateRecentEarningAmounts() {
+        profitIn1Hour = nil
+        profitIn24Hours = nil
+        
+        guard let snapshots = self.walletSnapshots,
+            let latestSnapshot = snapshots.first,
+            let latestSnapshotDate = latestSnapshot.timestamp as Date?,
+            snapshots.count > 1,
+            let oneDayAgo = NSCalendar.current.date(byAdding: .day, value: -1, to: latestSnapshotDate) else {
+                return
+        }
+        
+        for i in 1..<snapshots.count {
+            let snapshot = snapshots[i]
+            if let timestamp = snapshot.timestamp as Date? {
+                if timestamp <= oneDayAgo {
+                    if let interpWallet = findEstimatedWalletData(between: latestSnapshot,
+                                                                  and: snapshot,
+                                                                  secondsFromFirstWallet: secondsInADay) {
+                        profitIn24Hours = interpWallet.total
+                    }
+                }
+            }
+            else {
+                assert(false, "Timestamp is nil? Why?")
+            }
+        }
+        
+        guard let oneHourAgo = NSCalendar.current.date(byAdding: .hour, value: -1, to: latestSnapshotDate) else {
+            return
+        }
+        
+        for i in 1..<snapshots.count {
+            let snapshot = snapshots[i]
+            if let timestamp = snapshot.timestamp as Date? {
+                if timestamp <= oneHourAgo {
+                    if let interpWallet = findEstimatedWalletData(between: latestSnapshot,
+                                                                  and: snapshot,
+                                                                  secondsFromFirstWallet: secondsInAnHour) {
+                        profitIn1Hour = interpWallet.total
+                    }
+                }
+            }
+            else {
+                assert(false, "Timestamp is nil? Why?")
+            }
+        }
+    }
+    
+    func findEstimatedWalletData(between firstWallet: WalletSnapshot, and secondWallet: WalletSnapshot, secondsFromFirstWallet: Double) -> PoolWalletData? {
+        guard let firstDate = firstWallet.timestamp as Date?,
+            let secondDate = secondWallet.timestamp as Date? else {
+                assert(false, "Couldn't find the dates to interpolate between")
+                return nil
+        }
+        let timeGap = firstDate.timeIntervalSince1970 - secondDate.timeIntervalSince1970
+        let interpolateModifier = secondsFromFirstWallet / timeGap
+        
+        var walletData = PoolWalletData(address: "", pool: Pool.unknown)
+        walletData.total = interpolateModifier * (firstWallet.total - secondWallet.total)
+        walletData.unpaid = interpolateModifier * (firstWallet.unpaid - secondWallet.unpaid)
+        walletData.unsold = interpolateModifier * (firstWallet.unsold - secondWallet.unsold)
+        walletData.paid24Hour = interpolateModifier * (firstWallet.paid24Hour - secondWallet.paid24Hour)
+        walletData.balance = interpolateModifier * (firstWallet.balance - secondWallet.balance)
+        
+        return walletData
     }
 }
