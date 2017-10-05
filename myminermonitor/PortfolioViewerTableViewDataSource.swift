@@ -12,6 +12,8 @@ import CoreData
 struct WalletOverview {
     var totalPaid: Double = 0
     var totalEarned: Double = 0
+    var totalPast1Hour: Double = 0
+    var totalPast24Hours: Double = 0
 }
 
 protocol DataSourceObserver : class {
@@ -69,6 +71,8 @@ class PortfolioViewerTableViewDataSource: NSObject, UITableViewDataSource, NSFet
             if wallet.currency == .bitcoin {
                 overview.totalEarned += wallet.total
                 overview.totalPaid += wallet.paid24Hour
+                overview.totalPast24Hours += wallet.profitIn24Hours ?? 0
+                overview.totalPast1Hour += wallet.profitIn1Hour ?? 0
             }
             else {
                 // TODO // convert to bitcoin and add

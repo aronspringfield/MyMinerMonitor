@@ -15,8 +15,9 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
             portfolioViewerDataSource.portfolioIdentifier = portfolioIdentifier
         }
     }
+    @IBOutlet weak var pastHourEarningsLabel: UILabel!
+    @IBOutlet weak var past24HourEarningsLabel: UILabel!
     @IBOutlet weak var totalEarningsLabel: UILabel!
-    @IBOutlet weak var totalPaidLabel: UILabel!
     @IBOutlet weak var totalEarningsLocalizedLabel: UILabel!
     @IBOutlet weak var btcExchangeRateLabel: UILabel!
     @IBOutlet weak var totalEarningsLocalizedAmountLabel: UILabel!
@@ -31,8 +32,9 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pastHourEarningsLabel.text = "0"
+        past24HourEarningsLabel.text = "0"
         totalEarningsLabel.text = "0"
-        totalPaidLabel.text = "0"
         portfolioViewerDataSource.updateDelegate = self
         updateOverviewLabels()
     }
@@ -77,8 +79,9 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
     
     func updateOverviewLabels() {
         let overview = portfolioViewerDataSource.getWalletOverview()
+        pastHourEarningsLabel.text = overview.totalPast1Hour.toCurrencyString()
+        past24HourEarningsLabel.text = overview.totalPast24Hours.toCurrencyString()
         totalEarningsLabel.text = overview.totalEarned.toCurrencyString()
-        totalPaidLabel.text = overview.totalPaid.toCurrencyString()
         
         CryptoPriceIndex.sharedInstance.getBitcoinPriceForCurrentLocale { (price, symbol) in
             self.totalEarningsLocalizedLabel.text = "Total Earnings (\(symbol))"
