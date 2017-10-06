@@ -134,7 +134,8 @@ class PortfolioWalletTableViewCell: UITableViewCell, WalletStatusDelegate {
     }
     
     func update24HourEarningRate(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView) {
-        guard let profitIn24Hours = wallet.profitIn24Hours else {
+        let profitIn24Hours = wallet.profitIn24Hours
+        guard profitIn24Hours > 0 else {
             labelRowView.isHidden = true
             return
         }
@@ -146,7 +147,8 @@ class PortfolioWalletTableViewCell: UITableViewCell, WalletStatusDelegate {
     }
     
     func update1HourEarningRate(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView) {
-        guard let profitIn1Hour = wallet.profitIn1Hour else {
+        let profitIn1Hour = wallet.profitIn1Hour
+        guard profitIn1Hour > 0 else {
             labelRowView.isHidden = true
             return
         }

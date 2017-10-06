@@ -71,8 +71,8 @@ class PortfolioViewerTableViewDataSource: NSObject, UITableViewDataSource, NSFet
             if wallet.currency == .bitcoin {
                 overview.totalEarned += wallet.total
                 overview.totalPaid += wallet.paid24Hour
-                overview.totalPast24Hours += wallet.profitIn24Hours ?? 0
-                overview.totalPast1Hour += wallet.profitIn1Hour ?? 0
+                overview.totalPast24Hours += wallet.profitIn24Hours
+                overview.totalPast1Hour += wallet.profitIn1Hour
             }
             else {
                 // TODO // convert to bitcoin and add

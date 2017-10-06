@@ -30,8 +30,6 @@ public class Wallet: NSManagedObject {
     let secondsInAnHour: Double = 60 * 60
     let secondsInADay: Double = 60 * 60 * 24
     var walletSnapshots: [WalletSnapshot]?
-    var profitIn1Hour: Double?
-    var profitIn24Hours: Double?
     
     var identifier: String {
         get {
@@ -88,7 +86,6 @@ public class Wallet: NSManagedObject {
         self.balance = snapshot.balance
         self.updatedTimestamp = snapshot.timestamp
         
-        
         updateWalletSnapshots()
         updateRecentEarningAmounts()
     }
@@ -113,70 +110,80 @@ public class Wallet: NSManagedObject {
     }
     
     func updateRecentEarningAmounts() {
-        profitIn1Hour = nil
-        profitIn24Hours = nil
+        profitIn1Hour = 0
+        profitIn24Hours = 0
         
+        guard let snapshots = self.walletSnapshots,
+            let latestSnapshot = snapshots.first,
+            snapshots.count > 1 else {
+                return
+        }
+        
+        if let oneHourAgoWallet = findEstimatedWalletData(inTheLast: secondsInAnHour) {
+            let differenceWallet = findWalletChangeBetween(walletSnapshot: latestSnapshot,
+                                                           walletData: oneHourAgoWallet)
+            profitIn1Hour = differenceWallet.total
+        }
+        
+        if let oneDayAgoWallet = findEstimatedWalletData(inTheLast: secondsInADay) {
+            let differenceWallet = findWalletChangeBetween(walletSnapshot: latestSnapshot,
+                                                           walletData: oneDayAgoWallet)
+            profitIn24Hours = differenceWallet.total
+        }
+    }
+    
+    func findEstimatedWalletData(inTheLast secondsSinceLatestWallet: Double) -> PoolWalletData? {
         guard let snapshots = self.walletSnapshots,
             let latestSnapshot = snapshots.first,
             let latestSnapshotDate = latestSnapshot.timestamp as Date?,
             snapshots.count > 1,
-            let oneDayAgo = NSCalendar.current.date(byAdding: .day, value: -1, to: latestSnapshotDate) else {
-                return
-        }
-        
-        for i in 1..<snapshots.count {
-            let snapshot = snapshots[i]
-            if let timestamp = snapshot.timestamp as Date? {
-                if timestamp <= oneDayAgo {
-                    if let interpWallet = findEstimatedWalletData(between: latestSnapshot,
-                                                                  and: snapshot,
-                                                                  secondsFromFirstWallet: secondsInADay) {
-                        profitIn24Hours = interpWallet.total
-                    }
-                }
-            }
-            else {
-                assert(false, "Timestamp is nil? Why?")
-            }
-        }
-        
-        guard let oneHourAgo = NSCalendar.current.date(byAdding: .hour, value: -1, to: latestSnapshotDate) else {
-            return
-        }
-        
-        for i in 1..<snapshots.count {
-            let snapshot = snapshots[i]
-            if let timestamp = snapshot.timestamp as Date? {
-                if timestamp <= oneHourAgo {
-                    if let interpWallet = findEstimatedWalletData(between: latestSnapshot,
-                                                                  and: snapshot,
-                                                                  secondsFromFirstWallet: secondsInAnHour) {
-                        profitIn1Hour = interpWallet.total
-                    }
-                }
-            }
-            else {
-                assert(false, "Timestamp is nil? Why?")
-            }
-        }
-    }
-    
-    func findEstimatedWalletData(between firstWallet: WalletSnapshot, and secondWallet: WalletSnapshot, secondsFromFirstWallet: Double) -> PoolWalletData? {
-        guard let firstDate = firstWallet.timestamp as Date?,
-            let secondDate = secondWallet.timestamp as Date? else {
-                assert(false, "Couldn't find the dates to interpolate between")
+            let timeOfEstimateWallet = NSCalendar.current.date(byAdding: .second,
+                                                               value: Int(-secondsSinceLatestWallet),
+                                                               to: latestSnapshotDate) else {
                 return nil
         }
-        let timeGap = firstDate.timeIntervalSince1970 - secondDate.timeIntervalSince1970
-        let interpolateModifier = secondsFromFirstWallet / timeGap
         
-        var walletData = PoolWalletData(address: "", pool: Pool.unknown)
-        walletData.total = interpolateModifier * (firstWallet.total - secondWallet.total)
-        walletData.unpaid = interpolateModifier * (firstWallet.unpaid - secondWallet.unpaid)
-        walletData.unsold = interpolateModifier * (firstWallet.unsold - secondWallet.unsold)
-        walletData.paid24Hour = interpolateModifier * (firstWallet.paid24Hour - secondWallet.paid24Hour)
-        walletData.balance = interpolateModifier * (firstWallet.balance - secondWallet.balance)
+        for i in 1..<snapshots.count {
+            let earlierSnapshot = snapshots[i]
+            if let timestamp = earlierSnapshot.timestamp as Date? {
+                if timestamp <= timeOfEstimateWallet {
+                    let laterSnapshot = snapshots[i-1]
+                    
+                    guard let earlierDate = earlierSnapshot.timestamp as Date?,
+                        let laterDate = laterSnapshot.timestamp as Date? else {
+                            assert(false, "Couldn't find the dates to interpolate between")
+                            return nil
+                    }
+                    
+                    let timeGap = laterDate.timeIntervalSince1970 - earlierDate.timeIntervalSince1970
+                    let timeSinceLaterDate = latestSnapshotDate.timeIntervalSince1970 - laterDate.timeIntervalSince1970
+                    let timeToSimulate = secondsSinceLatestWallet - timeSinceLaterDate
+                    let multiplier = timeToSimulate / timeGap
+                    
+                    var walletData = PoolWalletData(address: "", pool: Pool.unknown)
+                    walletData.total = earlierSnapshot.total + (laterSnapshot.total - earlierSnapshot.total) * multiplier
+                    walletData.unpaid = earlierSnapshot.unpaid + (laterSnapshot.unpaid - earlierSnapshot.unpaid) * multiplier
+                    walletData.unsold = earlierSnapshot.unsold + (laterSnapshot.unsold - earlierSnapshot.unsold) * multiplier
+                    walletData.paid24Hour = earlierSnapshot.paid24Hour + (laterSnapshot.paid24Hour - earlierSnapshot.paid24Hour) * multiplier
+                    walletData.balance = earlierSnapshot.balance + (laterSnapshot.balance - earlierSnapshot.balance) * multiplier
+                    return walletData
+                }
+            }
+            else {
+                assert(false, "Timestamp is nil? Why?")
+            }
+        }
         
-        return walletData
+        return nil
+    }
+    
+    func findWalletChangeBetween(walletSnapshot: WalletSnapshot, walletData: PoolWalletData) -> PoolWalletData {
+        var diffWallet = PoolWalletData(address: "", pool: Pool.unknown)
+        diffWallet.total = walletSnapshot.total - walletData.total
+        diffWallet.unpaid = walletSnapshot.unpaid - walletData.unpaid
+        diffWallet.unsold = walletSnapshot.unsold - walletData.unsold
+        diffWallet.paid24Hour = walletSnapshot.paid24Hour - walletData.paid24Hour
+        diffWallet.balance = walletSnapshot.balance - walletData.balance
+        return diffWallet
     }
 }

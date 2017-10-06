@@ -25,6 +25,8 @@ extension Wallet {
     @NSManaged public var unsold: Double
     @NSManaged public var paid24Hour: Double
     @NSManaged public var balance: Double
+    @NSManaged public var profitIn1Hour: Double
+    @NSManaged public var profitIn24Hours: Double
     @NSManaged public var name: String?
     @NSManaged public var updatedTimestamp: NSDate?
     
