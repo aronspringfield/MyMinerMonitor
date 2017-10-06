@@ -161,11 +161,11 @@ public class Wallet: NSManagedObject {
                     let multiplier = timeToSimulate / timeGap
                     
                     var walletData = PoolWalletData(address: "", pool: Pool.unknown)
-                    walletData.total = earlierSnapshot.total + (laterSnapshot.total - earlierSnapshot.total) * multiplier
-                    walletData.unpaid = earlierSnapshot.unpaid + (laterSnapshot.unpaid - earlierSnapshot.unpaid) * multiplier
-                    walletData.unsold = earlierSnapshot.unsold + (laterSnapshot.unsold - earlierSnapshot.unsold) * multiplier
-                    walletData.paid24Hour = earlierSnapshot.paid24Hour + (laterSnapshot.paid24Hour - earlierSnapshot.paid24Hour) * multiplier
-                    walletData.balance = earlierSnapshot.balance + (laterSnapshot.balance - earlierSnapshot.balance) * multiplier
+                    walletData.total = laterSnapshot.total - (laterSnapshot.total - earlierSnapshot.total) * multiplier
+                    walletData.unpaid = laterSnapshot.unpaid - (laterSnapshot.unpaid - earlierSnapshot.unpaid) * multiplier
+                    walletData.unsold = laterSnapshot.unsold - (laterSnapshot.unsold - earlierSnapshot.unsold) * multiplier
+                    walletData.paid24Hour = laterSnapshot.paid24Hour - (laterSnapshot.paid24Hour - earlierSnapshot.paid24Hour) * multiplier
+                    walletData.balance = laterSnapshot.balance - (laterSnapshot.balance - earlierSnapshot.balance) * multiplier
                     return walletData
                 }
             }
