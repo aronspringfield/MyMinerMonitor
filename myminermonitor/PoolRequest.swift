@@ -101,8 +101,9 @@ class PoolRequest {
                 }
             } catch let parseError {
                 print("parsing error: \(parseError)")
-                let responseString = String(data: data, encoding: .utf8)
-                print("raw response: \(responseString)")
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("raw response: \(responseString)")
+                }
                 responseHandler?(false, nil)
             }
         }
@@ -138,14 +139,7 @@ class PoolRequest {
             walletData?.currency = Currency(rawValue: currency) ?? .unknown
         }
         if let unsold = response["unsold"] as? NSNumber {
-            walletData?.balance = unsold.doubleValue
+            walletData?.unsold = unsold.doubleValue
         }
-        
-        assert(walletData?.total != nil, "Missing data")
-        assert(walletData?.paid24Hour != nil, "Missing data")
-        assert(walletData?.balance != nil, "Missing data")
-        assert(walletData?.unpaid != nil, "Missing data")
-        assert(walletData?.currency != nil, "Missing data")
-        assert(walletData?.balance != nil, "Missing data")
     }
 }

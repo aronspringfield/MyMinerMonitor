@@ -57,4 +57,10 @@ extension Wallet {
             rawCurrency = newValue.rawValue
         }
     }
+    
+    var outstandingTotal: Double {
+        get {
+            return self.total - self.paid24Hour
+        }
+    }
 }

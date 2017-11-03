@@ -90,4 +90,25 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
             self.totalEarningsLocalizedAmountLabel.text = self.numberFormatter.string(from: NSNumber(value: overview.totalEarned * price))!
         }
     }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        var actions = [UITableViewRowAction]()
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            if let wallet = self.portfolioViewerDataSource.wallet(at: indexPath) {
+                DataStore.sharedInstance.removeEntity(wallet)
+                tableView.reloadData()
+            }
+        }
+        actions.append(deleteAction)
+        
+        let refreshAction = UITableViewRowAction(style: .normal, title: "Refresh") { (action, indexPath) in
+            if let wallet = self.portfolioViewerDataSource.wallet(at: indexPath) {
+                wallet.update()
+            }
+        }
+        actions.append(refreshAction)
+        
+        return actions
+    }
 }

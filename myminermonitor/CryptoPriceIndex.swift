@@ -55,8 +55,9 @@ class CryptoPriceIndex {
                 }
             } catch let parseError {
                 print("parsing error: \(parseError)")
-                let responseString = String(data: data, encoding: .utf8)
-                print("raw response: \(responseString)")
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("raw response: \(responseString)")
+                }
             }
             completionHandler()
         }

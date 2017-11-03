@@ -41,7 +41,7 @@ public class Wallet: NSManagedObject {
         }
     }
     
-    func update() {
+    func update(with completionHandler: (()->())? = nil) {
         guard let poolRequest = PoolRequest.poolRequest(for: self.pool, wallet: self) else {
                 assert(false, "Failed to find a pool request!")
                 return
@@ -54,14 +54,16 @@ public class Wallet: NSManagedObject {
             if success, let walletData = walletData {
                 self.addWalletSnapshot(with: walletData)
                 DispatchQueue.main.async {
-                    self.delegate?.walletDidUpdate()
                     DataStore.sharedInstance.save()
+                    self.delegate?.walletDidUpdate()
+                    completionHandler?()
                 }
             }
             else {
                 self.updateFailed = true
                 DispatchQueue.main.async {
                     self.delegate?.walletDidFailToUpdate()
+                    completionHandler?()
                 }
                 // TODO: Show failed UI
             }
@@ -185,5 +187,27 @@ public class Wallet: NSManagedObject {
         diffWallet.paid24Hour = walletSnapshot.paid24Hour - walletData.paid24Hour
         diffWallet.balance = walletSnapshot.balance - walletData.balance
         return diffWallet
+    }
+    
+    // MARK: - Class Methods
+    
+    class func updateAllWallets(with completionHandler: (()->())?) {
+        let fetchRequest: NSFetchRequest<Wallet> = Wallet.fetchRequest()
+        do {
+        let allWallets = try DataStore.sharedInstance.persistentContainer.viewContext.fetch(fetchRequest)
+            var counter = 0
+            let targetCount = allWallets.count
+            for wallet in allWallets {
+                wallet.update() {
+                    counter += 1
+                    if counter >= targetCount {
+                        completionHandler?()
+                    }
+                }
+            }
+        }
+        catch {
+            assert(false, "Failed to fetch Wallets with error: \(error)")
+        }
     }
 }

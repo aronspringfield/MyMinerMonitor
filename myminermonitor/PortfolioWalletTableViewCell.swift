@@ -21,6 +21,7 @@ class PortfolioWalletTableViewCell: UITableViewCell, WalletStatusDelegate {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var poolNameLabel: UILabel!
     @IBOutlet weak var walletLabel: UILabel!
+    @IBOutlet weak var lastUpdateLabel: UILabel!
     @IBOutlet weak var requestStatusImageView: UIImageView!
     @IBOutlet var walletLabelRowViews: [PortfolioWalletLabelRowView]!
 
@@ -73,6 +74,13 @@ class PortfolioWalletTableViewCell: UITableViewCell, WalletStatusDelegate {
         poolNameLabel.text = wallet.pool.rawValue
         walletLabel.text = wallet.address
         
+        if let date = wallet.updatedTimestamp as Date? {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            dateFormatter.timeStyle = .short
+            lastUpdateLabel.text = "Last Update: " + dateFormatter.string(from: date)
+        }
+        
         var currentRowIndex = 0
         var walletLabelRow = walletLabelRowViews.first
         walletLabelRow?.isHidden = false
@@ -99,64 +107,69 @@ class PortfolioWalletTableViewCell: UITableViewCell, WalletStatusDelegate {
             getNextWallet()
             getConversionPrice(with: wallet)
         }
-
+        
         assert(walletLabelRow != nil, "Wallet label row should not be nil!")
-        if let walletLabelRow = walletLabelRow {
-            update1HourEarningRate(with: wallet, labelRowView: walletLabelRow)
-        }
+        update1HourEarningRate(with: wallet, labelRowView: walletLabelRow)
         getNextWallet()
         
         assert(walletLabelRow != nil, "Wallet label row should not be nil!")
-        if let walletLabelRow = walletLabelRow {
-            update24HourEarningRate(with: wallet, labelRowView: walletLabelRow)
-        }
+        update24HourEarningRate(with: wallet, labelRowView: walletLabelRow)
         getNextWallet()
         
         assert(walletLabelRow != nil, "Wallet label row should not be nil!")
-        if let walletLabelRow = walletLabelRow {
-            updateTotalEarningsLabel(with: wallet, labelRowView: walletLabelRow)
-        }
+        updateConfirmedEarningsLabel(with: wallet, labelRowView: walletLabelRow)
+        getNextWallet()
+        
+        assert(walletLabelRow != nil, "Wallet label row should not be nil!")
+        updateTotalEarningsLabel(with: wallet, labelRowView: walletLabelRow)
         hideRemainingRows()
     }
     
-    func updateBtcConvertionLabels(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView) {
-        labelRowView.isHidden = false
-        labelRowView.fieldNameLabel.text = "BTC Value"
-        labelRowView.amountLabel.text = "-"
-        labelRowView.currencyLabel.text = Currency.bitcoin.rawValue
+    func updateBtcConvertionLabels(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
+        labelRowView?.isHidden = false
+        labelRowView?.fieldNameLabel.text = "BTC Value"
+        labelRowView?.amountLabel.text = "-"
+        labelRowView?.currencyLabel.text = Currency.bitcoin.rawValue
     }
     
-    func updateTotalEarningsLabel(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView) {
-        labelRowView.isHidden = false
-        labelRowView.fieldNameLabel.text = "Total"
-        labelRowView.amountLabel.text = wallet.total.toCurrencyString()
-        labelRowView.currencyLabel.text = wallet.currency.rawValue
+    func updateConfirmedEarningsLabel(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
+        labelRowView?.isHidden = false
+        labelRowView?.fieldNameLabel.text = "Confirmed"
+        labelRowView?.amountLabel.text = wallet.balance.toCurrencyString()
+        labelRowView?.currencyLabel.text = wallet.currency.rawValue
     }
     
-    func update24HourEarningRate(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView) {
+    func updateTotalEarningsLabel(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
+        labelRowView?.isHidden = false
+        labelRowView?.fieldNameLabel.text = "Total"
+        labelRowView?.amountLabel.text = wallet.outstandingTotal.toCurrencyString()
+        labelRowView?.currencyLabel.text = wallet.currency.rawValue
+    }
+    
+    func update24HourEarningRate(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
         let profitIn24Hours = wallet.profitIn24Hours
-        guard profitIn24Hours > 0 else {
-            labelRowView.isHidden = true
+        guard profitIn24Hours != 0 else {
+            labelRowView?.isHidden = true
             return
         }
         
-        labelRowView.isHidden = false
-        labelRowView.fieldNameLabel.text = "Past 24 Hours"
-        labelRowView.amountLabel.text = profitIn24Hours.toCurrencyString()
-        labelRowView.currencyLabel.text = wallet.currency.rawValue
+        labelRowView?.isHidden = false
+        labelRowView?.fieldNameLabel.text = "Past 24 Hours"
+        labelRowView?.amountLabel.text = profitIn24Hours.toCurrencyString()
+        labelRowView?.currencyLabel.text = wallet.currency.rawValue
     }
     
-    func update1HourEarningRate(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView) {
+    func update1HourEarningRate(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
         let profitIn1Hour = wallet.profitIn1Hour
-        guard profitIn1Hour > 0 else {
-            labelRowView.isHidden = true
+        guard profitIn1Hour != 0 else {
+            labelRowView?.isHidden = true
             return
         }
         
-        labelRowView.isHidden = false
-        labelRowView.fieldNameLabel.text = "Past 1 Hour"
-        labelRowView.amountLabel.text = profitIn1Hour.toCurrencyString()
-        labelRowView.currencyLabel.text = wallet.currency.rawValue
+        labelRowView?.isHidden = false
+        labelRowView?.fieldNameLabel.text = "Past 1 Hour"
+        labelRowView?.amountLabel.text = profitIn1Hour.toCurrencyString()
+        labelRowView?.currencyLabel.text = wallet.currency.rawValue
     }
     
     func walletDidBeginUpdating() {
@@ -221,8 +234,9 @@ class PortfolioWalletTableViewCell: UITableViewCell, WalletStatusDelegate {
               //  }
             } catch let parseError {
                 print("parsing error: \(parseError)")
-                let responseString = String(data: data, encoding: .utf8)
-                print("raw response: \(responseString)")
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("raw response: \(responseString)")
+                }
                 //completionHandler()
             }
         }

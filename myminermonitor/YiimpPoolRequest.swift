@@ -15,6 +15,6 @@ class YiimpPoolRequest: PoolRequest {
     }
     
     override internal func walletUpdateBaseUrl() -> String? {
-        return "http://yiimp.ccminer.org/api/wallet?address="
+        return "http://yiimp.eu/api/wallet?address="
     }
 }
