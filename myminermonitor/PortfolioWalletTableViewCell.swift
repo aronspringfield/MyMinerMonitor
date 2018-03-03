@@ -109,19 +109,23 @@ class PortfolioWalletTableViewCell: UITableViewCell, WalletStatusDelegate {
         }
         
         assert(walletLabelRow != nil, "Wallet label row should not be nil!")
+        updateConfirmedUnpaidEarningsLabel(with: wallet, labelRowView: walletLabelRow)
+        getNextWallet()
+        
+        assert(walletLabelRow != nil, "Wallet label row should not be nil!")
+        updateTotalUnpaidEarningsLabel(with: wallet, labelRowView: walletLabelRow)
+        getNextWallet()
+        
+        assert(walletLabelRow != nil, "Wallet label row should not be nil!")
+        updateTotalEarningsLabel(with: wallet, labelRowView: walletLabelRow)
+        getNextWallet()
+        
+        assert(walletLabelRow != nil, "Wallet label row should not be nil!")
         update1HourEarningRate(with: wallet, labelRowView: walletLabelRow)
         getNextWallet()
         
         assert(walletLabelRow != nil, "Wallet label row should not be nil!")
         update24HourEarningRate(with: wallet, labelRowView: walletLabelRow)
-        getNextWallet()
-        
-        assert(walletLabelRow != nil, "Wallet label row should not be nil!")
-        updateConfirmedEarningsLabel(with: wallet, labelRowView: walletLabelRow)
-        getNextWallet()
-        
-        assert(walletLabelRow != nil, "Wallet label row should not be nil!")
-        updateTotalEarningsLabel(with: wallet, labelRowView: walletLabelRow)
         hideRemainingRows()
     }
     
@@ -132,17 +136,24 @@ class PortfolioWalletTableViewCell: UITableViewCell, WalletStatusDelegate {
         labelRowView?.currencyLabel.text = Currency.bitcoin.rawValue
     }
     
-    func updateConfirmedEarningsLabel(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
+    func updateConfirmedUnpaidEarningsLabel(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
         labelRowView?.isHidden = false
-        labelRowView?.fieldNameLabel.text = "Confirmed"
+        labelRowView?.fieldNameLabel.text = "Balance"
         labelRowView?.amountLabel.text = wallet.balance.toCurrencyString()
+        labelRowView?.currencyLabel.text = wallet.currency.rawValue
+    }
+    
+    func updateTotalUnpaidEarningsLabel(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
+        labelRowView?.isHidden = false
+        labelRowView?.fieldNameLabel.text = "Total Unpaid"
+        labelRowView?.amountLabel.text = wallet.totalUnpaid.toCurrencyString()
         labelRowView?.currencyLabel.text = wallet.currency.rawValue
     }
     
     func updateTotalEarningsLabel(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
         labelRowView?.isHidden = false
-        labelRowView?.fieldNameLabel.text = "Total"
-        labelRowView?.amountLabel.text = wallet.outstandingTotal.toCurrencyString()
+        labelRowView?.fieldNameLabel.text = "Total Earned"
+        labelRowView?.amountLabel.text = wallet.totalEarned.toCurrencyString()
         labelRowView?.currencyLabel.text = wallet.currency.rawValue
     }
     

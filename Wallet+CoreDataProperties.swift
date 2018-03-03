@@ -20,11 +20,11 @@ extension Wallet {
     @NSManaged public var address: String?
     @NSManaged private var rawPool: String?
     @NSManaged private var rawCurrency: String?
-    @NSManaged public var total: Double
-    @NSManaged public var unpaid: Double
-    @NSManaged public var unsold: Double
-    @NSManaged public var paid24Hour: Double
+    @NSManaged public var totalPaid: Double
+    @NSManaged public var totalUnpaid: Double
     @NSManaged public var balance: Double
+    @NSManaged public var unsold: Double
+    @NSManaged public var totalEarned: Double
     @NSManaged public var profitIn1Hour: Double
     @NSManaged public var profitIn24Hours: Double
     @NSManaged public var name: String?
@@ -55,12 +55,6 @@ extension Wallet {
         }
         set {
             rawCurrency = newValue.rawValue
-        }
-    }
-    
-    var outstandingTotal: Double {
-        get {
-            return self.total - self.paid24Hour
         }
     }
 }

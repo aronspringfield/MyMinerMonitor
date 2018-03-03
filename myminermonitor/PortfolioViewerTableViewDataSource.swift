@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 struct WalletOverview {
+    var balance: Double = 0
+    var totalUnpaid: Double = 0
     var totalPaid: Double = 0
     var totalEarned: Double = 0
     var totalPast1Hour: Double = 0
@@ -69,8 +71,10 @@ class PortfolioViewerTableViewDataSource: NSObject, UITableViewDataSource, NSFet
         }
         for wallet in fetchedWallets {
             if wallet.currency == .bitcoin {
-                overview.totalEarned += wallet.outstandingTotal
-                overview.totalPaid += wallet.paid24Hour
+                overview.balance += wallet.balance
+                overview.totalEarned += wallet.totalEarned
+                overview.totalUnpaid += wallet.totalUnpaid
+                overview.totalPaid += wallet.totalPaid
                 overview.totalPast24Hours += wallet.profitIn24Hours
                 overview.totalPast1Hour += wallet.profitIn1Hour
             }

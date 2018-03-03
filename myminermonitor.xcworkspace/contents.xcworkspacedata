@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/Aron/Documents/XCode/myminermonitor/myminermonitor/BlazePoolPoolRequest.swift">
+   </FileRef>
+   <FileRef
       location = "group:myminermonitor.xcodeproj">
    </FileRef>
    <FileRef

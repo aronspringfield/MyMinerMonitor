@@ -1,0 +1,6 @@
+framework module Pods_myminermonitor {
+  umbrella header "Pods-myminermonitor-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -21,11 +21,11 @@ struct PoolWalletData {
     let address: String
     let pool: Pool
     var currency: Currency = .unknown
-    var total: Double = 0
-    var unpaid: Double = 0
-    var unsold: Double = 0
-    var paid24Hour: Double = 0
+    var totalPaid: Double = 0
+    var totalUnpaid: Double = 0
     var balance: Double = 0
+    var unsold: Double = 0
+    var totalEarned: Double = 0
     
     init(address: String, pool: Pool) {
         self.address = address

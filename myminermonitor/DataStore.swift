@@ -47,11 +47,11 @@ class DataStore: NSObject {
                                                          into: persistentContainer.viewContext) as! WalletSnapshot
         entity.walletIdentifier = walletIdentifier
         entity.timestamp = NSDate()
-        entity.unsold = walletData.unsold
-        entity.unpaid = walletData.unpaid
-        entity.total = walletData.total
-        entity.paid24Hour = walletData.paid24Hour
+        entity.totalPaid = walletData.totalPaid
+        entity.totalUnpaid = walletData.totalUnpaid
         entity.balance = walletData.balance
+        entity.unsold = walletData.unsold
+        entity.totalEarned = walletData.totalEarned
         return entity
     }
     

@@ -17,12 +17,11 @@ extension WalletSnapshot {
         return NSFetchRequest<WalletSnapshot>(entityName: "WalletSnapshot")
     }
 
-    @NSManaged public var timestamp: NSDate?
-    @NSManaged public var unsold: Double
-    @NSManaged public var unpaid: Double
-    @NSManaged public var total: Double
     @NSManaged public var walletIdentifier: String?
-    @NSManaged public var paid24Hour: Double
+    @NSManaged public var timestamp: NSDate?
+    @NSManaged public var totalPaid: Double
+    @NSManaged public var totalUnpaid: Double
     @NSManaged public var balance: Double
-
+    @NSManaged public var unsold: Double
+    @NSManaged public var totalEarned: Double
 }

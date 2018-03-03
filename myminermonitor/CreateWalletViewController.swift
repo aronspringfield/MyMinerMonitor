@@ -21,7 +21,8 @@ class CreateWalletViewController: UIViewController, UIPickerViewDelegate, UIPick
         Pool.zpool,
         Pool.hashRefinery,
         Pool.aHashPool,
-        Pool.niceHash
+        Pool.blazePool,
+        Pool.zergPool
     ]
 
     override func viewDidLoad() {

@@ -15,10 +15,11 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
             portfolioViewerDataSource.portfolioIdentifier = portfolioIdentifier
         }
     }
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var totalUnpaidLabel: UILabel!
+    @IBOutlet weak var totalEarnedLabel: UILabel!
     @IBOutlet weak var pastHourEarningsLabel: UILabel!
-    @IBOutlet weak var past24HourEarningsLabel: UILabel!
-    @IBOutlet weak var totalEarningsLabel: UILabel!
-    @IBOutlet weak var totalEarningsLocalizedLabel: UILabel!
+    @IBOutlet weak var past24HoursEarningsLabel: UILabel!
     @IBOutlet weak var btcExchangeRateLabel: UILabel!
     @IBOutlet weak var totalEarningsLocalizedAmountLabel: UILabel!
     @IBOutlet weak var portfolioViewerDataSource: PortfolioViewerTableViewDataSource!
@@ -32,9 +33,11 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        balanceLabel.text = "0"
+        totalUnpaidLabel.text = "0"
+        totalEarnedLabel.text = "0"
         pastHourEarningsLabel.text = "0"
-        past24HourEarningsLabel.text = "0"
-        totalEarningsLabel.text = "0"
+        past24HoursEarningsLabel.text = "0"
         portfolioViewerDataSource.updateDelegate = self
         updateOverviewLabels()
     }
@@ -79,16 +82,19 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
     
     func updateOverviewLabels() {
         let overview = portfolioViewerDataSource.getWalletOverview()
+        balanceLabel.text = overview.balance.toCurrencyString()
+        totalUnpaidLabel.text = overview.totalUnpaid.toCurrencyString()
+        totalEarnedLabel.text = overview.totalEarned.toCurrencyString()
         pastHourEarningsLabel.text = overview.totalPast1Hour.toCurrencyString()
-        past24HourEarningsLabel.text = overview.totalPast24Hours.toCurrencyString()
-        totalEarningsLabel.text = overview.totalEarned.toCurrencyString()
+        past24HoursEarningsLabel.text = overview.totalPast24Hours.toCurrencyString()
         
-        CryptoPriceIndex.sharedInstance.getBitcoinPriceForCurrentLocale { (price, symbol) in
-            self.totalEarningsLocalizedLabel.text = "Total Earnings (\(symbol))"
-            let localizedPriceString = self.numberFormatter.string(from: NSNumber(value: price))!
-            self.btcExchangeRateLabel.text = "1 BTC = " + localizedPriceString
-            self.totalEarningsLocalizedAmountLabel.text = self.numberFormatter.string(from: NSNumber(value: overview.totalEarned * price))!
-        }
+        // TODO: refactor this label toggles
+//        CryptoPriceIndex.sharedInstance.getBitcoinPriceForCurrentLocale { (price, symbol) in
+//            self.totalEarningsLocalizedLabel.text = "Total Earnings (\(symbol))"
+//            let localizedPriceString = self.numberFormatter.string(from: NSNumber(value: price))!
+//            self.btcExchangeRateLabel.text = "1 BTC = " + localizedPriceString
+//            self.totalEarningsLocalizedAmountLabel.text = self.numberFormatter.string(from: NSNumber(value: overview.totalEarned * price))!
+//        }
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

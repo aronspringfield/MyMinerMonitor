@@ -81,11 +81,12 @@ public class Wallet: NSManagedObject {
         }
         let snapshot = DataStore.sharedInstance.insertNewWalletSnapshot(for: walletIdentifier,
                                                          walletData: walletData)
-        self.total = snapshot.total
-        self.unpaid = snapshot.unpaid
-        self.unsold = snapshot.unsold
-        self.paid24Hour = snapshot.paid24Hour
+        self.currency = walletData.currency
+        self.totalPaid = snapshot.totalPaid
+        self.totalUnpaid = snapshot.totalUnpaid
         self.balance = snapshot.balance
+        self.unsold = snapshot.unsold
+        self.totalEarned = snapshot.totalEarned
         self.updatedTimestamp = snapshot.timestamp
         
         updateWalletSnapshots()
@@ -124,13 +125,13 @@ public class Wallet: NSManagedObject {
         if let oneHourAgoWallet = findEstimatedWalletData(inTheLast: secondsInAnHour) {
             let differenceWallet = findWalletChangeBetween(walletSnapshot: latestSnapshot,
                                                            walletData: oneHourAgoWallet)
-            profitIn1Hour = differenceWallet.total
+            profitIn1Hour = differenceWallet.totalEarned
         }
         
         if let oneDayAgoWallet = findEstimatedWalletData(inTheLast: secondsInADay) {
             let differenceWallet = findWalletChangeBetween(walletSnapshot: latestSnapshot,
                                                            walletData: oneDayAgoWallet)
-            profitIn24Hours = differenceWallet.total
+            profitIn24Hours = differenceWallet.totalEarned
         }
     }
     
@@ -163,11 +164,11 @@ public class Wallet: NSManagedObject {
                     let multiplier = timeToSimulate / timeGap
                     
                     var walletData = PoolWalletData(address: "", pool: Pool.unknown)
-                    walletData.total = laterSnapshot.total - (laterSnapshot.total - earlierSnapshot.total) * multiplier
-                    walletData.unpaid = laterSnapshot.unpaid - (laterSnapshot.unpaid - earlierSnapshot.unpaid) * multiplier
-                    walletData.unsold = laterSnapshot.unsold - (laterSnapshot.unsold - earlierSnapshot.unsold) * multiplier
-                    walletData.paid24Hour = laterSnapshot.paid24Hour - (laterSnapshot.paid24Hour - earlierSnapshot.paid24Hour) * multiplier
+                    walletData.totalPaid = laterSnapshot.totalPaid - (laterSnapshot.totalPaid - earlierSnapshot.totalPaid) * multiplier
+                    walletData.totalUnpaid = laterSnapshot.totalUnpaid - (laterSnapshot.totalUnpaid - earlierSnapshot.totalUnpaid) * multiplier
                     walletData.balance = laterSnapshot.balance - (laterSnapshot.balance - earlierSnapshot.balance) * multiplier
+                    walletData.unsold = laterSnapshot.unsold - (laterSnapshot.unsold - earlierSnapshot.unsold) * multiplier
+                    walletData.totalEarned = laterSnapshot.totalEarned - (laterSnapshot.totalEarned - earlierSnapshot.totalEarned) * multiplier
                     return walletData
                 }
             }
@@ -181,11 +182,11 @@ public class Wallet: NSManagedObject {
     
     func findWalletChangeBetween(walletSnapshot: WalletSnapshot, walletData: PoolWalletData) -> PoolWalletData {
         var diffWallet = PoolWalletData(address: "", pool: Pool.unknown)
-        diffWallet.total = walletSnapshot.total - walletData.total
-        diffWallet.unpaid = walletSnapshot.unpaid - walletData.unpaid
-        diffWallet.unsold = walletSnapshot.unsold - walletData.unsold
-        diffWallet.paid24Hour = walletSnapshot.paid24Hour - walletData.paid24Hour
+        diffWallet.totalPaid = walletSnapshot.totalPaid - walletData.totalPaid
+        diffWallet.totalUnpaid = walletSnapshot.totalUnpaid - walletData.totalUnpaid
         diffWallet.balance = walletSnapshot.balance - walletData.balance
+        diffWallet.unsold = walletSnapshot.unsold - walletData.unsold
+        diffWallet.totalEarned = walletSnapshot.totalEarned - walletData.totalEarned
         return diffWallet
     }
     

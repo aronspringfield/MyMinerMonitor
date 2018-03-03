@@ -14,7 +14,8 @@ enum Pool : String {
     case zpool = "zpool"
     case hashRefinery = "hashRefinery"
     case aHashPool = "ahashpool"
-    case niceHash = "nicehash"
+    case blazePool = "blazepool"
+    case zergPool = "zergPool"
     
     init(safeRawValue: String) {
         self = Pool(rawValue: safeRawValue) ?? .unknown
@@ -42,8 +43,10 @@ class PoolRequest {
             return HashRefineryPoolRequest(wallet: wallet)
         case .aHashPool:
             return AHashPoolPoolRequest(wallet: wallet)
-        case .niceHash:
-            return NiceHashPoolRequest(wallet: wallet)
+        case .blazePool:
+            return BlazePoolPoolRequest(wallet: wallet)
+        case .zergPool:
+            return ZergPoolPoolRequest(wallet: wallet)
         case .unknown:
             return nil
         }
@@ -123,20 +126,20 @@ class PoolRequest {
     internal func processResponse(_ response: [String: AnyObject]) {
         assert(walletData != nil, "Wallet data should not be nil")
         
-        if let total = response["total"] as? NSNumber {
-            walletData?.total = total.doubleValue
-        }
-        if let paid24Hour = response["paid24h"] as? NSNumber {
-            walletData?.paid24Hour = paid24Hour.doubleValue
+        if let total = response["total_paid"] as? NSNumber {
+            walletData?.totalPaid = total.doubleValue
         }
         if let balance = response["balance"] as? NSNumber {
             walletData?.balance = balance.doubleValue
         }
-        if let unpaid = response["unpaid"] as? NSNumber {
-            walletData?.unpaid = unpaid.doubleValue
+        if let unpaid = response["total_unpaid"] as? NSNumber {
+            walletData?.totalUnpaid = unpaid.doubleValue
         }
         if let currency = response["currency"] as? String {
             walletData?.currency = Currency(rawValue: currency) ?? .unknown
+        }
+        if let paid24Hour = response["total_earned"] as? NSNumber {
+            walletData?.totalEarned = paid24Hour.doubleValue
         }
         if let unsold = response["unsold"] as? NSNumber {
             walletData?.unsold = unsold.doubleValue
