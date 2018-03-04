@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		158C7922AD4604F3C443F6AF4199CF5E /* Pods-myminermonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-myminermonitorTests.release.xcconfig"; sourceTree = "<group>"; };
-		1F0BBA18D2B876CCD2081B50ECED71DA /* Pods-myminermonitorTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-myminermonitorTests.modulemap"; sourceTree = "<group>"; };
+		1F0BBA18D2B876CCD2081B50ECED71DA /* Pods-myminermonitorTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-myminermonitorTests.modulemap"; sourceTree = "<group>"; };
 		243934BD95F165C7EB5E42503E8880A9 /* Pods-myminermonitorTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-myminermonitorTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		264ED46766ED476D0236C3647C7E8D14 /* Pods-myminermonitorTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-myminermonitorTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		561594233E6122A54D83E103B90F3848 /* Pods-myminermonitorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-myminermonitorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -26,7 +26,7 @@
 		651DEA516E864D3E40942914BCCA15AF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6A6D24D650509AB9172B040D756D24C4 /* Pods-myminermonitor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-myminermonitor-umbrella.h"; sourceTree = "<group>"; };
-		6E2E5A2E9AC663BB96F0832C9B2F3338 /* Pods_myminermonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_myminermonitor.framework; path = "Pods-myminermonitor.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E2E5A2E9AC663BB96F0832C9B2F3338 /* Pods_myminermonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myminermonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		713400BA9E9E3B8FC6483F7260F2F20F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7239045F68BD60424F22AB3109B58948 /* Pods-myminermonitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-myminermonitor.debug.xcconfig"; sourceTree = "<group>"; };
 		77A444BED8DDB512D1B196D10EAD71A5 /* Pods-myminermonitorTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-myminermonitorTests-dummy.m"; sourceTree = "<group>"; };
@@ -34,11 +34,11 @@
 		7DB21ACB16B76CAE4BCC7DF2475A0103 /* Pods-myminermonitorTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-myminermonitorTests-resources.sh"; sourceTree = "<group>"; };
 		8390F51CF2ADBA491A291314EEC17917 /* Pods-myminermonitorTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-myminermonitorTests-frameworks.sh"; sourceTree = "<group>"; };
 		8A9A89E3999F4CD4C428227B6B8935E7 /* Pods-myminermonitor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-myminermonitor-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		97C818CC8048FD574E40A82BE64A2EE6 /* Pods-myminermonitor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-myminermonitor.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97C818CC8048FD574E40A82BE64A2EE6 /* Pods-myminermonitor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-myminermonitor.modulemap"; sourceTree = "<group>"; };
 		9B79096089CFCA7B556CD5763F82AE86 /* Pods-myminermonitor-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-myminermonitor-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CD3030B2CF7AF4D5D979A2948792B857 /* Pods-myminermonitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-myminermonitor.release.xcconfig"; sourceTree = "<group>"; };
-		E151E2F7A80465539D5BA0D61AC3A7D1 /* Pods_myminermonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_myminermonitorTests.framework; path = "Pods-myminermonitorTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E151E2F7A80465539D5BA0D61AC3A7D1 /* Pods_myminermonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myminermonitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3A8C76C5162F0623832B99A670BA74 /* Pods-myminermonitor-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-myminermonitor-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,7 +205,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -357,6 +357,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -364,6 +365,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -444,6 +446,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -451,6 +454,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

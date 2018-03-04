@@ -88,6 +88,7 @@ public class Wallet: NSManagedObject {
         self.unsold = snapshot.unsold
         self.totalEarned = snapshot.totalEarned
         self.updatedTimestamp = snapshot.timestamp
+        self.activeMiners = walletData.activeMiners
         
         updateWalletSnapshots()
         updateRecentEarningAmounts()

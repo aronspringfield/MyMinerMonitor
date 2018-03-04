@@ -144,5 +144,45 @@ class PoolRequest {
         if let unsold = response["unsold"] as? NSNumber {
             walletData?.unsold = unsold.doubleValue
         }
+        let minerIds = self.minerIds(from: response["miners"])
+        for minerId in minerIds {
+            walletData?.activeMiners.append(minerId)
+        }
+    }
+    
+    internal func minerIds(from minersResponse: AnyObject?) -> [String] {
+        var minerIds: [String] = []
+        guard let miners = minersResponse as? [[String: AnyObject]],
+            miners.count > 0 else {
+                return minerIds
+        }
+        
+        let minerIdSuffix: String
+        if let walletData = walletData {
+            let shortenedAddress = walletData.address.substring(to: walletData.address.index(walletData.address.startIndex, offsetBy: 4))
+            minerIdSuffix = " -> " + walletData.pool.rawValue + " -> " + shortenedAddress + "..."
+        }
+        else {
+            minerIdSuffix = ""
+        }
+        
+        for miner in miners {
+            if let idName = miner["ID"] as? String,
+                idName.count > 0 {
+                minerIds.append(idName + minerIdSuffix)
+                continue
+            }
+            if let passwordField = miner["password"] as? String {
+                let params = passwordField.components(separatedBy: ",")
+                let idParams = params.compactMap { return $0.starts(with: "ID=") ? $0 : nil }
+                if let idParam = idParams.first,
+                    let idName = idParam.components(separatedBy: "=").last {
+                    minerIds.append(idName + minerIdSuffix)
+                    continue
+                }
+            }
+            minerIds.append("*Unnamed Miner*" + minerIdSuffix)
+        }
+        return minerIds
     }
 }

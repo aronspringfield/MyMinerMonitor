@@ -22,6 +22,7 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
     @IBOutlet weak var past24HoursEarningsLabel: UILabel!
     @IBOutlet weak var btcExchangeRateLabel: UILabel!
     @IBOutlet weak var totalEarningsLocalizedAmountLabel: UILabel!
+    @IBOutlet weak var activeMinersListLabel: UILabel!
     @IBOutlet weak var portfolioViewerDataSource: PortfolioViewerTableViewDataSource!
     
     lazy var numberFormatter: NumberFormatter = {
@@ -38,6 +39,7 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
         totalEarnedLabel.text = "0"
         pastHourEarningsLabel.text = "0"
         past24HoursEarningsLabel.text = "0"
+        activeMinersListLabel.text = "-"
         portfolioViewerDataSource.updateDelegate = self
         updateOverviewLabels()
     }
@@ -87,6 +89,11 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
         totalEarnedLabel.text = overview.totalEarned.toCurrencyString()
         pastHourEarningsLabel.text = overview.totalPast1Hour.toCurrencyString()
         past24HoursEarningsLabel.text = overview.totalPast24Hours.toCurrencyString()
+        if overview.activeMiners.count > 0 {
+            activeMinersListLabel.text = overview.activeMiners.joined(separator: "\n")
+        } else {
+            activeMinersListLabel.text = "-"
+        }
         
         // TODO: refactor this label toggles
 //        CryptoPriceIndex.sharedInstance.getBitcoinPriceForCurrentLocale { (price, symbol) in

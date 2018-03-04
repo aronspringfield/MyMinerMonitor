@@ -158,28 +158,16 @@ class PortfolioWalletTableViewCell: UITableViewCell, WalletStatusDelegate {
     }
     
     func update24HourEarningRate(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
-        let profitIn24Hours = wallet.profitIn24Hours
-        guard profitIn24Hours != 0 else {
-            labelRowView?.isHidden = true
-            return
-        }
-        
         labelRowView?.isHidden = false
         labelRowView?.fieldNameLabel.text = "Past 24 Hours"
-        labelRowView?.amountLabel.text = profitIn24Hours.toCurrencyString()
+        labelRowView?.amountLabel.text = wallet.profitIn24Hours.toCurrencyString()
         labelRowView?.currencyLabel.text = wallet.currency.rawValue
     }
     
     func update1HourEarningRate(with wallet: Wallet, labelRowView: PortfolioWalletLabelRowView?) {
-        let profitIn1Hour = wallet.profitIn1Hour
-        guard profitIn1Hour != 0 else {
-            labelRowView?.isHidden = true
-            return
-        }
-        
         labelRowView?.isHidden = false
         labelRowView?.fieldNameLabel.text = "Past 1 Hour"
-        labelRowView?.amountLabel.text = profitIn1Hour.toCurrencyString()
+        labelRowView?.amountLabel.text = wallet.profitIn1Hour.toCurrencyString()
         labelRowView?.currencyLabel.text = wallet.currency.rawValue
     }
     

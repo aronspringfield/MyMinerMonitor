@@ -39,6 +39,10 @@ class ZergPoolPoolRequest: PoolRequest {
         if let unsold = response["unsold"] as? NSNumber {
             walletData?.unsold = unsold.doubleValue
         }
+        let minerIds = self.minerIds(from: response["miners"])
+        for minerId in minerIds {
+            walletData?.activeMiners.append(minerId)
+        }
         
         //Missing total_paid, total_earned
         //Adds paid24h

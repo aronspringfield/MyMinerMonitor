@@ -16,6 +16,7 @@ struct WalletOverview {
     var totalEarned: Double = 0
     var totalPast1Hour: Double = 0
     var totalPast24Hours: Double = 0
+    var activeMiners: [String] = []
 }
 
 protocol DataSourceObserver : class {
@@ -77,6 +78,9 @@ class PortfolioViewerTableViewDataSource: NSObject, UITableViewDataSource, NSFet
                 overview.totalPaid += wallet.totalPaid
                 overview.totalPast24Hours += wallet.profitIn24Hours
                 overview.totalPast1Hour += wallet.profitIn1Hour
+                for miner in wallet.activeMiners {
+                    overview.activeMiners.append(miner)
+                }
             }
             else {
                 // TODO // convert to bitcoin and add

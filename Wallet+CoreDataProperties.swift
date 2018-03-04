@@ -18,6 +18,7 @@ extension Wallet {
 
     @NSManaged public var portfolioIdentifier: Int64
     @NSManaged public var address: String?
+    @NSManaged private var rawActiveMiners: String?
     @NSManaged private var rawPool: String?
     @NSManaged private var rawCurrency: String?
     @NSManaged public var totalPaid: Double
@@ -29,6 +30,23 @@ extension Wallet {
     @NSManaged public var profitIn24Hours: Double
     @NSManaged public var name: String?
     @NSManaged public var updatedTimestamp: NSDate?
+    
+    var activeMiners: [String] {
+        get {
+            guard let rawActiveMiners = rawActiveMiners else {
+                return []
+            }
+            return rawActiveMiners.components(separatedBy: "||")
+        }
+        set {
+            if newValue.count == 0 {
+                rawActiveMiners = nil
+            }
+            else {
+                rawActiveMiners = newValue.joined(separator: "||")
+            }
+        }
+    }
     
     var pool: Pool {
         get {

@@ -15,6 +15,6 @@ class AHashPoolPoolRequest: PoolRequest {
     }
     
     override internal func walletUpdateBaseUrl() -> String? {
-        return "http://www.ahashpool.com/api/wallet?address="
+        return "http://www.ahashpool.com/api/walletEx?address="
     }
 }
