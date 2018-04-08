@@ -11,15 +11,22 @@ import CoreData
 class DataStore: NSObject {
 
     static let sharedInstance = DataStore()
+    static var storeIsLoaded = false
     let persistentContainer = NSPersistentContainer(name: "DataStore")
     
     func loadStore(handler: ((Bool) -> ())?) {
+        guard DataStore.storeIsLoaded == false else {
+            handler?(true)
+            return
+        }
+        
         persistentContainer.loadPersistentStores { (persistentStoreDescription, error) in
             if let error = error {
                 print("Unable to Load Persistent Store")
                 print("\(error), \(error.localizedDescription)")
                 handler?(false)
             } else {
+                DataStore.storeIsLoaded = true
                 handler?(true)
             }
         }
