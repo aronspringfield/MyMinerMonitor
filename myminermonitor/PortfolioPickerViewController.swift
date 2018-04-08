@@ -28,7 +28,7 @@ class PortfolioPickerViewController: UIViewController, UITableViewDelegate {
     }
     
     @IBAction func informationButtonPressed(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Info", message: "This is a work in progress!\n\nCreated by Aron Springfield", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Info", message: "This is a work in progress!", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }

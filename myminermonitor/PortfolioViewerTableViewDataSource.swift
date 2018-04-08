@@ -19,6 +19,19 @@ struct WalletOverview {
     var activeMiners: [String] = []
 }
 
+// TODO: Currently unused
+struct Miner {
+    let minerId: String
+    let pool: Pool
+    let address: String
+    
+    init(minerId: String, pool: Pool, address: String) {
+        self.minerId = minerId
+        self.pool = pool
+        self.address = address
+    }
+}
+
 protocol DataSourceObserver : class {
     func controllerDidChangeContent()
 }
@@ -27,7 +40,7 @@ class PortfolioViewerTableViewDataSource: NSObject, UITableViewDataSource, NSFet
 
     weak var updateDelegate: DataSourceObserver?
     var portfolioIdentifier: Int64?
-    private var tableView: UITableView?
+    var tableView: UITableView?
     
     private var _fetchedResultsController: NSFetchedResultsController<Wallet>?
     private var fetchedResultsController: NSFetchedResultsController<Wallet> {
@@ -90,7 +103,6 @@ class PortfolioViewerTableViewDataSource: NSObject, UITableViewDataSource, NSFet
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        self.tableView = tableView
         return 1
     }
     
@@ -99,9 +111,9 @@ class PortfolioViewerTableViewDataSource: NSObject, UITableViewDataSource, NSFet
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.cellForRow(at: indexPath)?.isSelected = false
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PoolWalletCell") as? PortfolioWalletTableViewCell,
             let wallet = self.wallet(at: indexPath) {
+            cell.selectionStyle = .none
             cell.populate(with: wallet)
             return cell
         }

@@ -15,6 +15,12 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
             portfolioViewerDataSource.portfolioIdentifier = portfolioIdentifier
         }
     }
+    
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            portfolioViewerDataSource?.tableView = tableView
+        }
+    }
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var totalUnpaidLabel: UILabel!
     @IBOutlet weak var totalEarnedLabel: UILabel!
@@ -23,8 +29,11 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
     @IBOutlet weak var btcExchangeRateLabel: UILabel!
     @IBOutlet weak var totalEarningsLocalizedAmountLabel: UILabel!
     @IBOutlet weak var activeMinersListLabel: UILabel!
-    @IBOutlet weak var portfolioViewerDataSource: PortfolioViewerTableViewDataSource!
-    
+    @IBOutlet weak var portfolioViewerDataSource: PortfolioViewerTableViewDataSource! {
+        didSet {
+            portfolioViewerDataSource.tableView = tableView
+        }
+    }
     lazy var numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -40,6 +49,7 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
         pastHourEarningsLabel.text = "0"
         past24HoursEarningsLabel.text = "0"
         activeMinersListLabel.text = "-"
+        tableView.separatorStyle = .none
         portfolioViewerDataSource.updateDelegate = self
         updateOverviewLabels()
     }
