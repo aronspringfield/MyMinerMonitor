@@ -32,9 +32,16 @@ class PortfolioPickerViewController: UIViewController, UITableViewDelegate {
         alertController.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    @IBAction func addWalletButtonPressed(_ sender: AnyObject?) {
+        let navController = UIStoryboard(name: "CreatePortfolio", bundle: nil).instantiateInitialViewController()!
+        navController.modalPresentationStyle = .formSheet
+        self.present(navController, animated: true, completion: nil)
+    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.isSelected = false
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.isSelected = false
         guard let pickerSection = PortolioPickerSections(rawValue: indexPath.section) else {
             assert(false, "Failed to find matching tableview section")
             return
@@ -53,11 +60,8 @@ class PortfolioPickerViewController: UIViewController, UITableViewDelegate {
             
             break
         case .create:
-            let navController = UIStoryboard(name: "CreatePortfolio", bundle: nil).instantiateInitialViewController()!
-            navController.modalPresentationStyle = .formSheet
-            self.present(navController, animated: true, completion: nil)
+            addWalletButtonPressed(cell)
             break
         }
-  
     }
 }

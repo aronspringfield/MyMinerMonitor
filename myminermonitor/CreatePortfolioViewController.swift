@@ -10,15 +10,18 @@ import UIKit
 
 class CreatePortfolioViewController: UIViewController {
 
+    @IBOutlet weak var portfolioAddressTextField: UITextField!
     @IBOutlet weak var portfolioNameTextField: UITextField!
     @IBOutlet weak var createButton: UIButton!
     
     @IBAction func didPressCreate(_ sender: Any) {
-        guard let portfolioName = portfolioNameTextField.text,
+        guard let portfolioAddress = portfolioAddressTextField.text,
+            let portfolioName = portfolioNameTextField.text,
+            portfolioAddress.isEmpty == false,
             portfolioName.isEmpty == false else {
             return
         }
-        let _ = DataStore.sharedInstance.insertNewPortfolio(withName: portfolioName)
+        let _ = DataStore.sharedInstance.insertNewPortfolio(for: portfolioAddress, with: portfolioName)
         DataStore.sharedInstance.save()
         self.dismiss(animated: true, completion: nil)
     }

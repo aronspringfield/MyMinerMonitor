@@ -32,10 +32,11 @@ class DataStore: NSObject {
         }
     }
     
-    func insertNewPortfolio(withName name: String) -> Portfolio {
+    func insertNewPortfolio(for address: String, with name: String) -> Portfolio {
         let entity = NSEntityDescription.insertNewObject(forEntityName: "Portfolio",
                                                          into: persistentContainer.viewContext) as! Portfolio
         entity.identifier = Int64(Date().timeIntervalSince1970)
+        entity.address = address
         entity.name = name
         return entity
     }

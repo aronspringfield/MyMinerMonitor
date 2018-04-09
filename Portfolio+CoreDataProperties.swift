@@ -17,6 +17,7 @@ extension Portfolio {
     }
 
     @NSManaged public var identifier: Int64
+    @NSManaged public var address: String?
     @NSManaged public var name: String?
     @NSManaged public var rawWallets: NSObject?
 

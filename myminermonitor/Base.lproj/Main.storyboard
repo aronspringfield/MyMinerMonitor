@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yf9-Ic-QkH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yf9-Ic-QkH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Portfolio Picker View Controller-->
+        <!--iMine-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PortfolioPickerViewController" customModule="myminermonitor" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portfolios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooj-ID-u9J">
-                                <rect key="frame" x="143.5" y="84" width="88" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooj-ID-u9J">
+                                <rect key="frame" x="20" y="84" width="67.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portfolio Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y97-Te-kwt">
-                                                            <rect key="frame" x="23" y="24.5" width="114" height="21"/>
+                                                            <rect key="frame" x="16" y="24.5" width="114" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -68,13 +68,13 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I43-JW-Xhu">
-                                                            <rect key="frame" x="15" y="24.5" width="100" height="21"/>
+                                                            <rect key="frame" x="8" y="24.5" width="100" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_add" translatesAutoresizingMaskIntoConstraints="NO" id="4PL-pO-N9E">
-                                                            <rect key="frame" x="282" y="24.5" width="22" height="21"/>
+                                                            <rect key="frame" x="289" y="24.5" width="22" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="22" id="Hux-oJ-qDy"/>
                                                                 <constraint firstAttribute="width" secondItem="4PL-pO-N9E" secondAttribute="height" multiplier="1:1" constant="1" id="PwU-CP-DFH"/>
@@ -113,20 +113,31 @@
                                     <action selector="informationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNc-Ab-e7F"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPJ-J8-JJh">
+                                <rect key="frame" x="8" y="623" width="359" height="36"/>
+                                <state key="normal" image="button_add"/>
+                                <connections>
+                                    <action selector="addWalletButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NX5-p0-eRN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YS9-Dy-pm8" firstAttribute="top" secondItem="ooj-ID-u9J" secondAttribute="bottom" constant="20" id="47w-yv-7SD"/>
-                            <constraint firstItem="ooj-ID-u9J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8pB-hc-fPC"/>
+                            <constraint firstItem="ooj-ID-u9J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="9WW-b8-LWr"/>
+                            <constraint firstItem="PPJ-J8-JJh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="BzE-Vc-1WG"/>
                             <constraint firstItem="ooj-ID-u9J" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Fk2-2J-rIG"/>
                             <constraint firstItem="bD5-Eb-fRh" firstAttribute="top" secondItem="YS9-Dy-pm8" secondAttribute="bottom" constant="8" id="GA6-dt-Gjr"/>
+                            <constraint firstAttribute="trailing" secondItem="PPJ-J8-JJh" secondAttribute="trailing" constant="8" id="Rf1-lD-xak"/>
                             <constraint firstItem="YS9-Dy-pm8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="XDo-Gt-EuK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PPJ-J8-JJh" secondAttribute="bottom" constant="8" id="hb8-uY-rzO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bD5-Eb-fRh" secondAttribute="bottom" constant="8" id="oV2-k4-cws"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bD5-Eb-fRh" secondAttribute="trailing" constant="8" id="sJV-kb-ATm"/>
+                            <constraint firstItem="PPJ-J8-JJh" firstAttribute="top" secondItem="YS9-Dy-pm8" secondAttribute="bottom" constant="8" id="uNP-RB-HLP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YS9-Dy-pm8" secondAttribute="trailing" constant="8" id="vKO-7K-rcn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wTk-n9-4pn"/>
+                    <navigationItem key="navigationItem" title="iMine" id="wTk-n9-4pn"/>
                     <connections>
                         <outlet property="tableView" destination="qAh-iq-mxn" id="OTJ-Yq-Uam"/>
                     </connections>

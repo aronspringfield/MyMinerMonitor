@@ -53,7 +53,7 @@ class PortfolioPickerDataSource: NSObject, UITableViewDataSource, NSFetchedResul
         case .open:
             return fetchedResultsController.fetchedObjects?.count ?? 0
         case .create:
-            return 1
+            return 0 // Disabled - Button is currently a static part of the ViewController
         }
     }
     
