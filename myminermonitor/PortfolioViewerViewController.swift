@@ -10,9 +10,11 @@ import UIKit
 
 class PortfolioViewerViewController: UIViewController, UITableViewDelegate, DataSourceObserver {
 
-    var portfolioIdentifier: Int64? {
+    var portfolio: Portfolio? {
         didSet {
-            portfolioViewerDataSource.portfolioIdentifier = portfolioIdentifier
+            if let portfolio = portfolio {
+                portfolioViewerDataSource.portfolioIdentifier = portfolio.identifier
+            }
         }
     }
     
@@ -56,22 +58,31 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        assert(portfolioIdentifier != nil, "Portfolio Identifier is nil!")
+        assert(portfolio != nil, "Portfolio is nil!")
     }
 
     @IBAction func didPressAddWalletButton(_ sender: Any) {
-        guard let identifier = portfolioIdentifier else {
+        guard let portfolio = portfolio else {
             return
         }
         
         let createWalletVC = UIStoryboard(name: "CreateWallet", bundle: nil).instantiateInitialViewController() as! CreateWalletViewController
-        createWalletVC.portfolioIdentifier = identifier
+        createWalletVC.portfolioIdentifier = portfolio.identifier
+        createWalletVC.prefillAddress = portfolio.address
         let navController = UINavigationController(rootViewController: createWalletVC)
         self.present(navController, animated: true, completion: nil)
     }
     
     @IBAction func didPressRefreshWallets(_ sender: Any) {
-        portfolioViewerDataSource.updateAllWallets()
+        portfolio?.updateAllWallets(nil)
+        //portfolioViewerDataSource.updateAllWallets()
+    }
+    
+    @IBAction func didPressSettings(_ sender: Any) {
+        let settingsViewController = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() as! SettingsViewController
+        settingsViewController.portfolio = self.portfolio
+        //let navController = UINavigationController(rootViewController: settingsViewController)
+        self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

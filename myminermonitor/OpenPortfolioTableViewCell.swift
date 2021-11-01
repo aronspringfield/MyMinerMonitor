@@ -10,7 +10,11 @@ import UIKit
 
 class OpenPortfolioTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var portfolioNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var twentyFourHourEarningsLabel: UILabel!
+    
     weak var portfolio: Portfolio? {
         didSet {
             setupCell()
@@ -19,11 +23,28 @@ class OpenPortfolioTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.prepareForReuse()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.nameLabel.text = "no name set"
+        self.addressLabel.text = "no address set"
+        self.balanceLabel.text = "-"
+        self.twentyFourHourEarningsLabel.text = "-"
     }
     
     private func setupCell() {
-        self.portfolioNameLabel.text = portfolio?.name ?? "No name set"
+        guard let portfolio = portfolio else {
+            return
+        }
+        
+        let overview = WalletOverview(wallets: portfolio.getAllWallets())
+        
+        self.nameLabel.text = portfolio.name
+        self.addressLabel.text = portfolio.address        
+        self.balanceLabel.text =  overview.balance.toCurrencyString()
+        self.twentyFourHourEarningsLabel.text = overview.totalPast24Hours.toCurrencyString()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

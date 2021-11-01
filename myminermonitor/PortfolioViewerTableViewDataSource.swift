@@ -9,16 +9,6 @@
 import UIKit
 import CoreData
 
-struct WalletOverview {
-    var balance: Double = 0
-    var totalUnpaid: Double = 0
-    var totalPaid: Double = 0
-    var totalEarned: Double = 0
-    var totalPast1Hour: Double = 0
-    var totalPast24Hours: Double = 0
-    var activeMiners: [String] = []
-}
-
 // TODO: Currently unused
 struct Miner {
     let minerId: String
@@ -79,27 +69,10 @@ class PortfolioViewerTableViewDataSource: NSObject, UITableViewDataSource, NSFet
     }
     
     func getWalletOverview() -> WalletOverview {
-        var overview = WalletOverview()
         guard let fetchedWallets = fetchedResultsController.fetchedObjects else {
             assert(false, "Fetched objects array is unexpectedly nil")
         }
-        for wallet in fetchedWallets {
-            if wallet.currency == .bitcoin {
-                overview.balance += wallet.balance
-                overview.totalEarned += wallet.totalEarned
-                overview.totalUnpaid += wallet.totalUnpaid
-                overview.totalPaid += wallet.totalPaid
-                overview.totalPast24Hours += wallet.profitIn24Hours
-                overview.totalPast1Hour += wallet.profitIn1Hour
-                for miner in wallet.activeMiners {
-                    overview.activeMiners.append(miner)
-                }
-            }
-            else {
-                // TODO // convert to bitcoin and add
-            }
-        }
-        return overview
+        return WalletOverview(wallets: fetchedWallets)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -22,9 +22,9 @@ class PortfolioPickerViewController: UIViewController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //self.tableView.reloadData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
     
     @IBAction func informationButtonPressed(_ sender: UIButton) {
@@ -55,7 +55,7 @@ class PortfolioPickerViewController: UIViewController, UITableViewDelegate {
                     return
             }
             let portfolioViewer = UIStoryboard(name: "PortfolioViewer", bundle: nil).instantiateInitialViewController() as! PortfolioViewerViewController
-            portfolioViewer.portfolioIdentifier = portfolio.identifier
+            portfolioViewer.portfolio = portfolio
             self.navigationController?.pushViewController(portfolioViewer, animated: true)
             
             break
