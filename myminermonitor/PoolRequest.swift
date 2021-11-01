@@ -16,6 +16,9 @@ enum Pool : String {
     case aHashPool = "ahashpool"
     case blazePool = "blazepool"
     case zergPool = "zergPool"
+    case mineMoney = "mineMoney"
+    case phiPhiPool = "phiPhiPool"
+    case blockMasters = "blockMasters"
     
     init(safeRawValue: String) {
         self = Pool(rawValue: safeRawValue) ?? .unknown
@@ -47,6 +50,12 @@ class PoolRequest {
             return BlazePoolPoolRequest(wallet: wallet)
         case .zergPool:
             return ZergPoolPoolRequest(wallet: wallet)
+        case .mineMoney:
+            return MineMoneyPoolRequest(wallet: wallet)
+        case .phiPhiPool:
+            return PhiPhiPoolPoolRequest(wallet: wallet)
+        case .blockMasters:
+            return BlockMastersPoolRequest(wallet: wallet)
         case .unknown:
             return nil
         }
@@ -84,7 +93,9 @@ class PoolRequest {
         
         if walletData == nil {
             if let address = wallet.address {
-                walletData = PoolWalletData(address: address, pool: self.pool())
+                walletData = PoolWalletData(address: address,
+                                            pool: self.pool(),
+                                            currency: wallet.currency)
             }
             assert(walletData != nil, "Wallet is unexpectedly nil")
         }
