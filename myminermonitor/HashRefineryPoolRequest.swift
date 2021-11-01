@@ -15,6 +15,6 @@ class HashRefineryPoolRequest: PoolRequest {
     }
     
     override internal func walletUpdateBaseUrl() -> String? {
-        return "http://pool.hashrefinery.com/api/wallet?address="
+        return "http://pool.hashrefinery.com/api/walletEx?address="
     }
 }

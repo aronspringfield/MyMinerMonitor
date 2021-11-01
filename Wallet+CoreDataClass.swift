@@ -15,6 +15,13 @@ protocol WalletStatusDelegate: class {
     func walletDidFailToUpdate()
 }
 
+enum WalletUpdateResult: Int {
+    case success
+    case partialSuccess
+    case failed
+    case none
+}
+
 @objc(Wallet)
 public class Wallet: NSManagedObject {
     
@@ -41,10 +48,11 @@ public class Wallet: NSManagedObject {
         }
     }
     
-    func update(with completionHandler: (()->())? = nil) {
+    func update(with completionHandler: ((_ success: Bool)->())? = nil) {
         guard let poolRequest = PoolRequest.poolRequest(for: self.pool, wallet: self) else {
-                assert(false, "Failed to find a pool request!")
-                return
+            assert(false, "Failed to find a pool request!")
+            completionHandler?(false)
+            return
         }
         
         updateFailed = false
@@ -56,14 +64,14 @@ public class Wallet: NSManagedObject {
                 DispatchQueue.main.async {
                     DataStore.sharedInstance.save()
                     self.delegate?.walletDidUpdate()
-                    completionHandler?()
+                    completionHandler?(true)
                 }
             }
             else {
                 self.updateFailed = true
                 DispatchQueue.main.async {
                     self.delegate?.walletDidFailToUpdate()
-                    completionHandler?()
+                    completionHandler?(false)
                 }
                 // TODO: Show failed UI
             }
@@ -114,30 +122,44 @@ public class Wallet: NSManagedObject {
     }
     
     func updateRecentEarningAmounts() {
-        profitIn1Hour = 0
-        profitIn24Hours = 0
-        
+        profitIn1Hour = getLast1HourWalletSummary()?.totalEarned ?? 0
+        profitIn24Hours = getLast24HoursWalletSummary()?.totalEarned ?? 0
+    }
+    
+    func getLast1HourWalletSummary() -> PoolWalletData? {
+        if walletSnapshots == nil {
+            updateWalletSnapshots()
+        }
+        return getLatestWalletSummary(forTheLast: secondsInAnHour)
+    }
+    
+    func getLast24HoursWalletSummary() -> PoolWalletData? {
+        if walletSnapshots == nil {
+            updateWalletSnapshots()
+        }
+        return getLatestWalletSummary(forTheLast: secondsInADay)
+    }
+    
+    func getLatestWalletSummary(forTheLast secondsSinceLatestWallet: Double) -> PoolWalletData? {
         guard let snapshots = self.walletSnapshots,
             let latestSnapshot = snapshots.first,
             snapshots.count > 1 else {
-                return
+                return nil
         }
         
-        if let oneHourAgoWallet = findEstimatedWalletData(inTheLast: secondsInAnHour) {
+        if let olderEstimatedWallet = findEstimatedWalletData(inTheLast: secondsSinceLatestWallet) {
             let differenceWallet = findWalletChangeBetween(walletSnapshot: latestSnapshot,
-                                                           walletData: oneHourAgoWallet)
-            profitIn1Hour = differenceWallet.totalEarned
+                                                           walletData: olderEstimatedWallet)
+            return differenceWallet
         }
         
-        if let oneDayAgoWallet = findEstimatedWalletData(inTheLast: secondsInADay) {
-            let differenceWallet = findWalletChangeBetween(walletSnapshot: latestSnapshot,
-                                                           walletData: oneDayAgoWallet)
-            profitIn24Hours = differenceWallet.totalEarned
-        }
+        return nil
     }
     
     func findEstimatedWalletData(inTheLast secondsSinceLatestWallet: Double) -> PoolWalletData? {
-        guard let snapshots = self.walletSnapshots,
+        guard
+            let address = self.address,
+            let snapshots = self.walletSnapshots,
             let latestSnapshot = snapshots.first,
             let latestSnapshotDate = latestSnapshot.timestamp as Date?,
             snapshots.count > 1,
@@ -164,7 +186,9 @@ public class Wallet: NSManagedObject {
                     let timeToSimulate = secondsSinceLatestWallet - timeSinceLaterDate
                     let multiplier = timeToSimulate / timeGap
                     
-                    var walletData = PoolWalletData(address: "", pool: Pool.unknown)
+                    var walletData = PoolWalletData(address: address,
+                                                    pool: self.pool,
+                                                    currency: self.currency)
                     walletData.totalPaid = laterSnapshot.totalPaid - (laterSnapshot.totalPaid - earlierSnapshot.totalPaid) * multiplier
                     walletData.totalUnpaid = laterSnapshot.totalUnpaid - (laterSnapshot.totalUnpaid - earlierSnapshot.totalUnpaid) * multiplier
                     walletData.balance = laterSnapshot.balance - (laterSnapshot.balance - earlierSnapshot.balance) * multiplier
@@ -182,7 +206,9 @@ public class Wallet: NSManagedObject {
     }
     
     func findWalletChangeBetween(walletSnapshot: WalletSnapshot, walletData: PoolWalletData) -> PoolWalletData {
-        var diffWallet = PoolWalletData(address: "", pool: Pool.unknown)
+        var diffWallet = PoolWalletData(address: self.address ?? "",
+                                        pool: self.pool,
+                                        currency: self.currency)
         diffWallet.totalPaid = walletSnapshot.totalPaid - walletData.totalPaid
         diffWallet.totalUnpaid = walletSnapshot.totalUnpaid - walletData.totalUnpaid
         diffWallet.balance = walletSnapshot.balance - walletData.balance
@@ -193,23 +219,58 @@ public class Wallet: NSManagedObject {
     
     // MARK: - Class Methods
     
-    class func updateAllWallets(with completionHandler: (()->())?) {
+    class func updateAllWallets(for portfolioIdentifier: Int64? = nil, with completionHandler: ((_ result: WalletUpdateResult, _ activeMiners: [String]?)->())?) {
         let fetchRequest: NSFetchRequest<Wallet> = Wallet.fetchRequest()
+        if let portfolioIdentifier = portfolioIdentifier {
+            fetchRequest.predicate = NSPredicate(format: "portfolioIdentifier == %lu", portfolioIdentifier)
+        }
+        let context = DataStore.sharedInstance.persistentContainer.viewContext
         do {
-        let allWallets = try DataStore.sharedInstance.persistentContainer.viewContext.fetch(fetchRequest)
+            let allWallets = try context.fetch(fetchRequest)
+            var updateResult = WalletUpdateResult.none
             var counter = 0
             let targetCount = allWallets.count
+            guard targetCount > 0 else {
+                completionHandler?(.none, nil)
+                return
+            }
+            var activeMiners = [String]()
             for wallet in allWallets {
-                wallet.update() {
+                activeMiners.append(contentsOf: wallet.activeMiners)
+                wallet.update() { success in
                     counter += 1
+                    NSLog("Wallet updated: \(success)")
+                    
+                    switch (success, updateResult) {
+                    case (true, .failed),
+                         (false, .success):
+                        updateResult = .partialSuccess
+                        break
+                    case (_, .partialSuccess):
+                        break
+                    case (true, _):
+                        updateResult = .success
+                        break
+                    case (false, _):
+                        updateResult = .failed
+                        break
+                    }
+                    
                     if counter >= targetCount {
-                        completionHandler?()
+                        // TODO: how do we wait for coredata save before completing?
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                            context.perform {
+                                completionHandler?(updateResult, activeMiners)
+                            }
+                        })
                     }
                 }
             }
         }
         catch {
             assert(false, "Failed to fetch Wallets with error: \(error)")
+            completionHandler?(.failed, nil)
         }
     }
+
 }

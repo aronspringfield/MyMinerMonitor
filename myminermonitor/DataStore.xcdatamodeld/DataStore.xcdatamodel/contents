@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Portfolio" representedClassName="Portfolio" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dailyReportsEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="downtimeFailedMinersCountInARow" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="downtimeWarningsEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastFullUpdateTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rawDailyReportTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rawDowntimeMinimumMiners" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="rawWallets" optional="YES" attributeType="Transformable" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wallet" inverseName="relationship" inverseEntity="Wallet" syncable="YES"/>
     </entity>
@@ -34,7 +40,7 @@
         <attribute name="walletIdentifier" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Portfolio" positionX="-45" positionY="63" width="128" height="120"/>
+        <element name="Portfolio" positionX="-45" positionY="63" width="128" height="210"/>
         <element name="Wallet" positionX="-63" positionY="-18" width="128" height="270"/>
         <element name="WalletSnapshot" positionX="-54" positionY="81" width="128" height="150"/>
     </elements>

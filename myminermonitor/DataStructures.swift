@@ -28,8 +28,9 @@ struct PoolWalletData {
     var totalEarned: Double = 0
     var activeMiners: [String] = []
     
-    init(address: String, pool: Pool) {
+    init(address: String, pool: Pool, currency: Currency) {
         self.address = address
         self.pool = pool
+        self.currency = currency
     }
 }

@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nwv-Kc-YoU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nwv-Kc-YoU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Portfolio Viewer View Controller-->
         <scene sceneID="7sQ-dp-w0Q">
@@ -524,39 +519,50 @@
                                     <outlet property="delegate" destination="nwv-Kc-YoU" id="uq1-3N-DFo"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPM-Xq-t4c" userLabel="RefreshButton">
-                                <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
-                                <state key="normal" image="status_updating"/>
-                                <connections>
-                                    <action selector="didPressRefreshWallets:" destination="nwv-Kc-YoU" eventType="touchUpInside" id="TpT-GW-pTa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D04-WY-Bki" userLabel="AddButton">
-                                <rect key="frame" x="0.0" y="617" width="187.5" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D04-WY-Bki" userLabel="UpdateButton">
+                                <rect key="frame" x="0.0" y="617" width="125" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Zz-uW-sq4"/>
                                 </constraints>
+                                <state key="normal" image="status_updating"/>
+                                <connections>
+                                    <action selector="didPressRefreshWallets:" destination="nwv-Kc-YoU" eventType="touchUpInside" id="X3g-6v-fUN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPM-Xq-t4c" userLabel="AddButton">
+                                <rect key="frame" x="125" y="617" width="125" height="50"/>
                                 <state key="normal" image="button_add"/>
                                 <connections>
-                                    <action selector="didPressAddWalletButton:" destination="nwv-Kc-YoU" eventType="touchUpInside" id="qZf-OR-Ksv"/>
+                                    <action selector="didPressAddWalletButton:" destination="nwv-Kc-YoU" eventType="touchUpInside" id="Aec-q5-r4l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r6-53-qyi" userLabel="SettingsButton">
+                                <rect key="frame" x="250" y="617" width="125" height="50"/>
+                                <state key="normal" image="button_settings"/>
+                                <connections>
+                                    <action selector="didPressSettings:" destination="nwv-Kc-YoU" eventType="touchUpInside" id="ge8-QD-F0e"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ydN-5s-ijY" firstAttribute="top" secondItem="qFZ-SK-9HH" secondAttribute="top" id="2cO-SB-tO9"/>
+                            <constraint firstItem="qFZ-SK-9HH" firstAttribute="trailing" secondItem="5r6-53-qyi" secondAttribute="trailing" id="BWd-ma-ipP"/>
                             <constraint firstItem="qFZ-SK-9HH" firstAttribute="bottom" secondItem="D04-WY-Bki" secondAttribute="bottom" id="DRx-wD-QQd"/>
                             <constraint firstItem="qFZ-SK-9HH" firstAttribute="trailing" secondItem="uVQ-1t-hii" secondAttribute="trailing" id="EFa-l5-SYB"/>
                             <constraint firstItem="uVQ-1t-hii" firstAttribute="leading" secondItem="qFZ-SK-9HH" secondAttribute="leading" id="EOA-1y-JTc"/>
+                            <constraint firstItem="5r6-53-qyi" firstAttribute="top" secondItem="uVQ-1t-hii" secondAttribute="bottom" id="F9N-3d-UcB"/>
                             <constraint firstItem="D04-WY-Bki" firstAttribute="top" secondItem="uVQ-1t-hii" secondAttribute="bottom" id="FWg-u9-AsE"/>
                             <constraint firstItem="ydN-5s-ijY" firstAttribute="leading" secondItem="qFZ-SK-9HH" secondAttribute="leading" id="HKc-eg-pMA"/>
                             <constraint firstItem="qFZ-SK-9HH" firstAttribute="bottom" secondItem="CPM-Xq-t4c" secondAttribute="bottom" id="HZm-ql-6Lp"/>
                             <constraint firstItem="D04-WY-Bki" firstAttribute="leading" secondItem="qFZ-SK-9HH" secondAttribute="leading" id="OA4-SC-aYr"/>
+                            <constraint firstItem="5r6-53-qyi" firstAttribute="width" secondItem="CPM-Xq-t4c" secondAttribute="width" id="PQb-yJ-96f"/>
                             <constraint firstItem="CPM-Xq-t4c" firstAttribute="top" secondItem="uVQ-1t-hii" secondAttribute="bottom" id="Ti4-Pp-1xk"/>
                             <constraint firstItem="D04-WY-Bki" firstAttribute="width" secondItem="CPM-Xq-t4c" secondAttribute="width" id="Uir-JD-VnB"/>
                             <constraint firstItem="uVQ-1t-hii" firstAttribute="top" secondItem="ydN-5s-ijY" secondAttribute="bottom" constant="10" id="ZMA-vg-uF5"/>
                             <constraint firstItem="CPM-Xq-t4c" firstAttribute="height" secondItem="D04-WY-Bki" secondAttribute="height" id="b9f-4d-g6t"/>
-                            <constraint firstItem="qFZ-SK-9HH" firstAttribute="trailing" secondItem="CPM-Xq-t4c" secondAttribute="trailing" id="lbq-7n-WTk"/>
+                            <constraint firstItem="5r6-53-qyi" firstAttribute="leading" secondItem="CPM-Xq-t4c" secondAttribute="trailing" id="hdl-bc-pFo"/>
+                            <constraint firstItem="qFZ-SK-9HH" firstAttribute="bottom" secondItem="5r6-53-qyi" secondAttribute="bottom" id="o13-TE-YLo"/>
                             <constraint firstItem="qFZ-SK-9HH" firstAttribute="trailing" secondItem="ydN-5s-ijY" secondAttribute="trailing" id="x4L-iP-o4d"/>
                             <constraint firstItem="CPM-Xq-t4c" firstAttribute="leading" secondItem="D04-WY-Bki" secondAttribute="trailing" id="xEG-ob-RyV"/>
                         </constraints>
@@ -581,6 +587,7 @@
     </scenes>
     <resources>
         <image name="button_add" width="24" height="24"/>
+        <image name="button_settings" width="25" height="25"/>
         <image name="status_updating" width="32" height="32"/>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import UIKit
 
 class DataStore: NSObject {
 

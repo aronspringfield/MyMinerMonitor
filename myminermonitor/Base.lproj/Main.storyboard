@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yf9-Ic-QkH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yf9-Ic-QkH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,49 +32,111 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YS9-Dy-pm8">
                                 <rect key="frame" x="24" y="128" width="327" height="487"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qAh-iq-mxn" customClass="PortfolioPickerTableView" customModule="myminermonitor" customModuleProvider="target">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qAh-iq-mxn">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="487"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OpenPortfolioCell" id="94M-ZI-VF7" userLabel="OpenPortfolioCell" customClass="OpenPortfolioTableViewCell" customModule="myminermonitor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="327" height="70"/>
+                                                <rect key="frame" x="0.0" y="28" width="327" height="124"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="94M-ZI-VF7" id="NLC-Nn-s71">
-                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="69.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="123.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portfolio Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y97-Te-kwt">
-                                                            <rect key="frame" x="16" y="24.5" width="114" height="21"/>
+                                                            <rect key="frame" x="15" y="8" width="114" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoI-Qc-gji">
+                                                            <rect key="frame" x="15" y="37" width="53" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiC-VT-sjO" userLabel="Balance">
+                                                            <rect key="frame" x="15" y="62" width="65" height="21"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brP-VQ-Jfk" userLabel="24Hour">
+                                                            <rect key="frame" x="15" y="91" width="66.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="0.00000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEI-3s-i69" userLabel="balance Label">
+                                                            <rect key="frame" x="199.5" y="62.5" width="90" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="0.00000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jb-Fz-yET" userLabel="24hour Label">
+                                                            <rect key="frame" x="199.5" y="91.5" width="90" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoM-eJ-Cds" userLabel="BTC (balance)">
+                                                            <rect key="frame" x="294.5" y="62.5" width="32.5" height="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDX-eY-sbb" userLabel="BTC (24hour)">
+                                                            <rect key="frame" x="294.5" y="91.5" width="32.5" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="y97-Te-kwt" firstAttribute="centerY" secondItem="NLC-Nn-s71" secondAttribute="centerY" id="48k-S4-9BQ"/>
-                                                        <constraint firstItem="y97-Te-kwt" firstAttribute="leading" secondItem="NLC-Nn-s71" secondAttribute="leadingMargin" constant="8" id="X2u-mD-8rq"/>
+                                                        <constraint firstAttribute="trailing" secondItem="uDX-eY-sbb" secondAttribute="trailing" id="1Xl-hX-oC3"/>
+                                                        <constraint firstItem="yiC-VT-sjO" firstAttribute="leading" secondItem="y97-Te-kwt" secondAttribute="leading" id="GIJ-WC-Qm8"/>
+                                                        <constraint firstItem="PEI-3s-i69" firstAttribute="centerY" secondItem="yiC-VT-sjO" secondAttribute="centerY" id="QcQ-Ho-WUg"/>
+                                                        <constraint firstItem="XoI-Qc-gji" firstAttribute="leading" secondItem="y97-Te-kwt" secondAttribute="leading" id="SHk-Gt-cGo"/>
+                                                        <constraint firstItem="y97-Te-kwt" firstAttribute="leading" secondItem="NLC-Nn-s71" secondAttribute="leadingMargin" id="X2u-mD-8rq"/>
+                                                        <constraint firstItem="yiC-VT-sjO" firstAttribute="top" secondItem="XoI-Qc-gji" secondAttribute="bottom" constant="8" id="XFM-xn-YNd"/>
+                                                        <constraint firstItem="uDX-eY-sbb" firstAttribute="leading" secondItem="1jb-Fz-yET" secondAttribute="trailing" constant="5" id="bT2-z9-kbJ"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XoI-Qc-gji" secondAttribute="trailing" id="d4k-mj-pmK"/>
+                                                        <constraint firstItem="1jb-Fz-yET" firstAttribute="centerY" secondItem="brP-VQ-Jfk" secondAttribute="centerY" id="gD0-QX-VbJ"/>
+                                                        <constraint firstItem="PEI-3s-i69" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yiC-VT-sjO" secondAttribute="trailing" constant="8" id="hyR-vg-L7q"/>
+                                                        <constraint firstItem="brP-VQ-Jfk" firstAttribute="leading" secondItem="y97-Te-kwt" secondAttribute="leading" id="j4N-cZ-PAK"/>
+                                                        <constraint firstItem="brP-VQ-Jfk" firstAttribute="top" secondItem="yiC-VT-sjO" secondAttribute="bottom" constant="8" id="quD-k9-PZF"/>
+                                                        <constraint firstItem="uDX-eY-sbb" firstAttribute="centerY" secondItem="brP-VQ-Jfk" secondAttribute="centerY" id="r1s-Lm-Idz"/>
+                                                        <constraint firstItem="XoI-Qc-gji" firstAttribute="top" secondItem="y97-Te-kwt" secondAttribute="bottom" constant="8" id="sSj-O1-fua"/>
+                                                        <constraint firstItem="1jb-Fz-yET" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="brP-VQ-Jfk" secondAttribute="trailing" constant="8" id="tV7-1d-aL3"/>
+                                                        <constraint firstItem="y97-Te-kwt" firstAttribute="top" secondItem="NLC-Nn-s71" secondAttribute="top" constant="8" id="xdg-tW-vX2"/>
                                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="y97-Te-kwt" secondAttribute="trailing" id="yjV-JK-O0n"/>
+                                                        <constraint firstItem="JoM-eJ-Cds" firstAttribute="centerY" secondItem="yiC-VT-sjO" secondAttribute="centerY" id="yuu-AS-DQg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="JoM-eJ-Cds" secondAttribute="trailing" id="zWy-SM-xQw"/>
+                                                        <constraint firstItem="JoM-eJ-Cds" firstAttribute="leading" secondItem="PEI-3s-i69" secondAttribute="trailing" constant="5" id="zxu-9F-te6"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="portfolioNameLabel" destination="y97-Te-kwt" id="j5s-qN-Egj"/>
+                                                    <outlet property="addressLabel" destination="XoI-Qc-gji" id="Ece-E2-Bll"/>
+                                                    <outlet property="balanceLabel" destination="PEI-3s-i69" id="5Wq-Bt-45U"/>
+                                                    <outlet property="nameLabel" destination="y97-Te-kwt" id="fpv-jp-PG4"/>
+                                                    <outlet property="twentyFourHourEarningsLabel" destination="1jb-Fz-yET" id="nfS-DK-LKu"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreatePortfolioCell" id="fc3-nx-dIW">
-                                                <rect key="frame" x="0.0" y="98" width="327" height="70"/>
+                                                <rect key="frame" x="0.0" y="152" width="327" height="124"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fc3-nx-dIW" id="bmW-D3-idw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="69.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="123.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I43-JW-Xhu">
-                                                            <rect key="frame" x="8" y="24.5" width="100" height="21"/>
+                                                            <rect key="frame" x="15" y="51.5" width="100" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_add" translatesAutoresizingMaskIntoConstraints="NO" id="4PL-pO-N9E">
-                                                            <rect key="frame" x="289" y="24.5" width="22" height="21"/>
+                                                            <rect key="frame" x="282" y="51.5" width="22" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="22" id="Hux-oJ-qDy"/>
                                                                 <constraint firstAttribute="width" secondItem="4PL-pO-N9E" secondAttribute="height" multiplier="1:1" constant="1" id="PwU-CP-DFH"/>
