@@ -176,6 +176,6 @@ extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         minimumMinersLabel.text = String(row)
         portfolio?.downtimeMinimumMiners = Int32(row)
-        try? portfolio?.managedObjectContext?.save() // TODO expand this try
+        ((try? portfolio?.managedObjectContext?.save()) as ()??) // TODO expand this try
     }
 }

@@ -103,7 +103,7 @@ public class Portfolio: NSManagedObject {
             latestMinerInfo = "\nAt the last update only \(latestMinerCount) miners were seen."
         }
         
-        let lastMinerSeenInfo: String
+        // let lastMinerSeenInfo: String
         
 //        "At the last update only 0 miners were seen"
 //        "The last time 4 miners were seen was at 10am"

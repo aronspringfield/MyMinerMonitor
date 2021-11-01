@@ -95,7 +95,7 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
         wallet.update()
     }
 
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
     

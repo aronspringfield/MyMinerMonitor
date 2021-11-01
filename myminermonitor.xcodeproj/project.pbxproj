@@ -121,7 +121,7 @@
 		9CE89DCA1F6C4E3000CDD0BC /* PortfolioViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PortfolioViewer.storyboard; sourceTree = "<group>"; };
 		9CE89DCC1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioWalletTableViewCell.swift; sourceTree = "<group>"; };
 		9CE89DCE1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewerTableViewDataSource.swift; sourceTree = "<group>"; };
-		9CFAE67E204B042B00903CA7 /* BlazePoolPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlazePoolPoolRequest.swift; path = /Users/Aron/Documents/XCode/myminermonitor/myminermonitor/BlazePoolPoolRequest.swift; sourceTree = "<absolute>"; };
+		9CFAE67E204B042B00903CA7 /* BlazePoolPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlazePoolPoolRequest.swift; path = /Users/aronspringfield/Documents/myminermonitor/myminermonitor/BlazePoolPoolRequest.swift; sourceTree = "<absolute>"; };
 		9CFAE680204B049900903CA7 /* ZergPoolPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZergPoolPoolRequest.swift; sourceTree = "<group>"; };
 		9CFBCF231F85857900D48465 /* WalletSnapshot+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletSnapshot+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9CFBCF241F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletSnapshot+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -254,6 +254,11 @@
 		9CCE2F701F5F1C1100E934AF /* myminermonitor */ = {
 			isa = PBXGroup;
 			children = (
+				9C60837A1F63080A00FFBAC4 /* CoreData */,
+				9C60835B1F60750B00FFBAC4 /* Pool Requests */,
+				9C60836C1F61D7FA00FFBAC4 /* Portfolio Picker */,
+				9C7D2AD31F63EF8C006E5324 /* Portfolio Viewer */,
+				9C6988BD20B02BC700CDF693 /* Extensions */,
 				9CCE2F711F5F1C1100E934AF /* AppDelegate.swift */,
 				9CE89DC41F69B5D800CDD0BC /* DataStructures.swift */,
 				9CCE2F731F5F1C1100E934AF /* AppLoadingViewController.swift */,
@@ -263,12 +268,7 @@
 				9C6988B920AE1A1700CDF693 /* BackgroundFetchUpdater.swift */,
 				9C12148C207EACF900121F80 /* Notifications.swift */,
 				9C6988B320ACCD9000CDF693 /* SettingsViewController.swift */,
-				9C60837A1F63080A00FFBAC4 /* CoreData */,
-				9C60835B1F60750B00FFBAC4 /* Pool Requests */,
-				9C60836C1F61D7FA00FFBAC4 /* Portfolio Picker */,
 				9C7D2AD41F63F72F006E5324 /* CreatePortfolioViewController.swift */,
-				9C7D2AD31F63EF8C006E5324 /* Portfolio Viewer */,
-				9C6988BD20B02BC700CDF693 /* Extensions */,
 				9CCF8EC61F6EA2C200DE29FC /* CreateWalletViewController.swift */,
 				9C60836F1F6304AF00FFBAC4 /* DataStore.xcdatamodeld */,
 				9CCE2F781F5F1C1100E934AF /* Assets.xcassets */,
@@ -351,12 +351,12 @@
 					9CCE2F6D1F5F1C1100E934AF = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = TABJ7J9Q4X;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1300;
 						ProvisioningStyle = Automatic;
 					};
 					9CCE2F811F5F1C1100E934AF = {
 						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1300;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9CCE2F6D1F5F1C1100E934AF;
 					};
@@ -367,6 +367,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -717,7 +718,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aronspringfield.myminermonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -732,7 +733,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aronspringfield.myminermonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -747,7 +748,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aronspringfield.myminermonitorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myminermonitor.app/myminermonitor";
 			};
 			name = Debug;
@@ -763,7 +764,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aronspringfield.myminermonitorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myminermonitor.app/myminermonitor";
 			};
 			name = Release;

@@ -93,7 +93,7 @@ class PortfolioViewerTableViewDataSource: NSObject, UITableViewDataSource, NSFet
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let wallet = self.wallet(at: indexPath) {
                 DataStore.sharedInstance.removeEntity(wallet)
