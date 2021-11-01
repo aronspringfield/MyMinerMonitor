@@ -11,18 +11,22 @@ import UIKit
 class CreateWalletViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var portfolioIdentifier: Int64?
+    var prefillAddress: String?
     @IBOutlet weak var poolNameTextField: UITextField!
     var poolPickerView: UIPickerView!
     @IBOutlet weak var walletAddressLabel: UITextField!
     
     var pickerData: [Pool] = [
-        Pool.unknown,
-        Pool.yiimp,
-        Pool.zpool,
-        Pool.hashRefinery,
-        Pool.aHashPool,
-        Pool.blazePool,
-        Pool.zergPool
+        .unknown,
+        .yiimp,
+        .zpool,
+        .hashRefinery,
+        .aHashPool,
+        .blazePool,
+        .zergPool,
+        .mineMoney,
+        .phiPhiPool,
+        .blockMasters
     ]
 
     override func viewDidLoad() {
@@ -32,6 +36,10 @@ class CreateWalletViewController: UIViewController, UIPickerViewDelegate, UIPick
         poolPickerView.delegate = self
         poolPickerView.dataSource = self
         poolNameTextField.inputView = poolPickerView
+        
+        if let prefillAddress = prefillAddress {
+            walletAddressLabel.text = prefillAddress
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -70,10 +78,12 @@ class CreateWalletViewController: UIViewController, UIPickerViewDelegate, UIPick
                 return
         }
         
-        let _ = DataStore.sharedInstance.insertNewWallet(for: identifier,
-                                                         pool: pool,
-                                                         address: walletAddress)
+        let wallet = DataStore.sharedInstance.insertNewWallet(for: identifier,
+                                                              pool: pool,
+                                                              address: walletAddress)
         DataStore.sharedInstance.save()
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            wallet.update()
+        }
     }
 }
