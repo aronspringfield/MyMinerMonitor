@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        application.setMinimumBackgroundFetchInterval(60 * 60)
+        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         return true
     }
 
@@ -43,23 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        NSLog("Beginning background fetch")
-        
-        let executeFetch = {
-            Wallet.updateAllWallets { // TODO: return success states
-                NSLog("Completed background fetch")
-                completionHandler(.newData)
-            }
-        }
-        
-        DataStore.sharedInstance.loadStore { (success) in
-            if success {
-                executeFetch()
-            }
-            else {
-                completionHandler(.failed)
-            }
-        }
+        BackgroundFetcher.update(completionHandler)
     }
 }
 
