@@ -75,20 +75,18 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
     
     @IBAction func didPressRefreshWallets(_ sender: Any) {
         portfolio?.updateAllWallets(nil)
-        //portfolioViewerDataSource.updateAllWallets()
     }
     
     @IBAction func didPressSettings(_ sender: Any) {
         let settingsViewController = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() as! SettingsViewController
         settingsViewController.portfolio = self.portfolio
-        //let navController = UINavigationController(rootViewController: settingsViewController)
         self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.isSelected = false
         guard let wallet = self.portfolioViewerDataSource.wallet(at: indexPath) else {
-                // TODO: Alert
+                // TODO: Show Warning Alert
                 return
         }
         
@@ -116,7 +114,7 @@ class PortfolioViewerViewController: UIViewController, UITableViewDelegate, Data
             activeMinersListLabel.text = "-"
         }
         
-        // TODO: refactor this label toggles
+        // TODO: refactor this label toggle
 //        CryptoPriceIndex.sharedInstance.getBitcoinPriceForCurrentLocale { (price, symbol) in
 //            self.totalEarningsLocalizedLabel.text = "Total Earnings (\(symbol))"
 //            let localizedPriceString = self.numberFormatter.string(from: NSNumber(value: price))!

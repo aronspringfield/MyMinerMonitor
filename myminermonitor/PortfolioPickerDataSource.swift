@@ -23,7 +23,10 @@ class PortfolioPickerDataSource: NSObject, UITableViewDataSource, NSFetchedResul
 
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
 
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataStore.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                                  managedObjectContext: DataStore.sharedInstance.persistentContainer.viewContext,
+                                                                  sectionNameKeyPath: nil,
+                                                                  cacheName: nil)
 
         fetchedResultsController.delegate = self
         

@@ -54,6 +54,7 @@ class SettingsViewController: UITableViewController {
         picker.delegate = self
         return picker
     }()
+//  TODO: Add the toolbar
 //    lazy var toolbar: UIToolbar = {
 //        let rect = CGRect(x: 0,
 //                          y: 0,
@@ -128,7 +129,7 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func didPressSend24HourReportButton(_ sender: UIButton) {
-        self.portfolio?.sendDailyReportIfNecessary(true)
+        self.portfolio?.sendDailyReport()
         let alert = UIAlertController(title: nil, message: "Sent", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -138,8 +139,6 @@ class SettingsViewController: UITableViewController {
         guard let rowType = SettingsTableViewSectionType(rawValue: indexPath.section) else {
             return
         }
-        
-        NSLog("Tapped section: \(rowType)")
         
         switch (rowType, indexPath.row) {
         case (.dailyReport, 1):
@@ -156,7 +155,6 @@ class SettingsViewController: UITableViewController {
             break
         }
     }
-
 }
 
 extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -176,6 +174,6 @@ extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         minimumMinersLabel.text = String(row)
         portfolio?.downtimeMinimumMiners = Int32(row)
-        ((try? portfolio?.managedObjectContext?.save()) as ()??) // TODO expand this try
+        try? portfolio?.managedObjectContext?.save()
     }
 }

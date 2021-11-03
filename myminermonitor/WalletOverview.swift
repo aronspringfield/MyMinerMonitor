@@ -31,7 +31,7 @@ struct WalletOverview {
                 }
             }
             else {
-                // TODO // convert to bitcoin and add
+                // TODO: convert to bitcoin and add
             }
         }
     }

@@ -214,6 +214,7 @@
 		9C6988BD20B02BC700CDF693 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9C2AFE101F705C1E00796E9F /* Double+CurrencyToString.swift */,
 				9C6988BE20B02BEB00CDF693 /* Locale+TimeStyle.swift */,
 			);
 			name = Extensions;
@@ -262,7 +263,6 @@
 				9CCE2F711F5F1C1100E934AF /* AppDelegate.swift */,
 				9CE89DC41F69B5D800CDD0BC /* DataStructures.swift */,
 				9CCE2F731F5F1C1100E934AF /* AppLoadingViewController.swift */,
-				9C2AFE101F705C1E00796E9F /* Double+CurrencyToString.swift */,
 				9C4579A91F79A2720062676F /* CryptoPriceIndex.swift */,
 				9C121488207E9FB500121F80 /* WalletOverview.swift */,
 				9C6988B920AE1A1700CDF693 /* BackgroundFetchUpdater.swift */,

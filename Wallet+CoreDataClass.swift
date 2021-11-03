@@ -48,7 +48,7 @@ public class Wallet: NSManagedObject {
         }
     }
     
-    func update(with completionHandler: ((_ success: Bool)->())? = nil) {
+    func update(with completionHandler: ((_ success: Bool) -> ())? = nil) {
         guard let poolRequest = PoolRequest.poolRequest(for: self.pool, wallet: self) else {
             assert(false, "Failed to find a pool request!")
             completionHandler?(false)
@@ -117,7 +117,7 @@ public class Wallet: NSManagedObject {
             self.walletSnapshots = results
         }
         catch {
-            // TODO
+            // TODO handle failure
         }
     }
     
@@ -219,7 +219,8 @@ public class Wallet: NSManagedObject {
     
     // MARK: - Class Methods
     
-    class func updateAllWallets(for portfolioIdentifier: Int64? = nil, with completionHandler: ((_ result: WalletUpdateResult, _ activeMiners: [String]?)->())?) {
+    class func updateAllWallets(for portfolioIdentifier: Int64? = nil,
+                                with completionHandler: ((_ result: WalletUpdateResult, _ activeMiners: [String]?) -> ())?) {
         let fetchRequest: NSFetchRequest<Wallet> = Wallet.fetchRequest()
         if let portfolioIdentifier = portfolioIdentifier {
             fetchRequest.predicate = NSPredicate(format: "portfolioIdentifier == %lu", portfolioIdentifier)

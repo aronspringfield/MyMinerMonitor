@@ -24,7 +24,7 @@ public class Portfolio: NSManagedObject {
         return []
     }
     
-    func updateAllWallets(_ completionHandler: ((_ result: WalletUpdateResult)->())?) {
+    func updateAllWallets(_ completionHandler: ((_ result: WalletUpdateResult) -> ())?) {
         Wallet.updateAllWallets { (walletUpdateResult, activeMiners) in
             guard walletUpdateResult == .success else {
                 completionHandler?(walletUpdateResult)
@@ -51,19 +51,24 @@ public class Portfolio: NSManagedObject {
         }
     }
     
-    func sendDailyReportIfNecessary(_ force: Bool = false) {
-        if force || shouldSendDailyReport() {
-            let walletName = name ?? "Wallet"
-            Notifications.shared.sendLocalNotification(title: walletName + " Daily 24h Report", body: dailyReportNotificationBody())
-            dailyReportTime = NSDate(timeIntervalSince1970: dailyReportTime.timeIntervalSince1970 + 60 * 60 * 24)
-        }
+    func sendDailyReportIfNecessary() {
+        guard shouldSendDailyReport() else { return }
+        sendDailyReport()
+    }
+
+    func sendDailyReport() {
+        let walletName = name ?? "Wallet"
+        Notifications.shared.sendLocalNotification(title: walletName + " Daily 24h Report",
+                                                   body: dailyReportNotificationBody())
+        dailyReportTime = NSDate(timeIntervalSince1970: dailyReportTime.timeIntervalSince1970 + 60 * 60 * 24)
     }
     
     func sendMinerDowntimeWarningIfNecessary(latestMinerCount: Int) {
         NSLog("Downtime count: \(downtimeFailedMinersCountInARow)")
         if self.downtimeFailedMinersCountInARow == 3 {
             let walletName = name ?? "Wallet"
-            Notifications.shared.sendLocalNotification(title: walletName + " Downtime Warning", body: minerDowntimeWarningNotificationBody(latestMinerCount: latestMinerCount))
+            Notifications.shared.sendLocalNotification(title: walletName + " Downtime Warning",
+                                                       body: minerDowntimeWarningNotificationBody(latestMinerCount: latestMinerCount))
         }
     }
     
@@ -74,7 +79,6 @@ public class Portfolio: NSManagedObject {
         guard let lastFullUpdateTime = lastFullUpdateTime else {
             return false
         }
-        
         return lastFullUpdateTime.timeIntervalSince(dailyReportTime as Date) > 0
     }
     
@@ -104,9 +108,7 @@ public class Portfolio: NSManagedObject {
         }
         
         // let lastMinerSeenInfo: String
-        
-//        "At the last update only 0 miners were seen"
-//        "The last time 4 miners were seen was at 10am"
+        // TODO: '"The last time 4 miners were seen was at 10am"'
         
         return topLine + latestMinerInfo //+ lastMinerSeenInfo
     }

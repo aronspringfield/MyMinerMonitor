@@ -10,28 +10,6 @@ import Foundation
 import CoreData
 
 extension Portfolio {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Portfolio> {
-        return NSFetchRequest<Portfolio>(entityName: "Portfolio")
-    }
-    
-    @nonobjc public func getAllWallets() -> [Wallet] {
-        guard let address = address else {
-            return []
-        }
-        let context = DataStore.sharedInstance.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Wallet> = Wallet.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "address == %@", address)
-        
-        do {
-            let result = try context.fetch(fetchRequest)
-            return result
-        }
-        catch {
-            return []
-        }
-    }
-
     @NSManaged public var identifier: Int64
     @NSManaged public var address: String?
     @NSManaged public var dailyReportsEnabled: Bool
@@ -74,6 +52,27 @@ extension Portfolio {
         }
         set {
             rawDowntimeMinimumMiners = newValue
+        }
+    }
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Portfolio> {
+        return NSFetchRequest<Portfolio>(entityName: "Portfolio")
+    }
+
+    @nonobjc public func getAllWallets() -> [Wallet] {
+        guard let address = address else {
+            return []
+        }
+        let context = DataStore.sharedInstance.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Wallet> = Wallet.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "address == %@", address)
+
+        do {
+            let result = try context.fetch(fetchRequest)
+            return result
+        }
+        catch {
+            return []
         }
     }
 }
