@@ -7,56 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C0C358C20EB7E620052C705 /* BlockMastersPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C358B20EB7E620052C705 /* BlockMastersPoolRequest.swift */; };
-		9C0E72EC209B9AFD003BF827 /* MineMoneyPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0E72EB209B9AFD003BF827 /* MineMoneyPoolRequest.swift */; };
-		9C0E72EE209B9B1D003BF827 /* PhiPhiPoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0E72ED209B9B1D003BF827 /* PhiPhiPoolPoolRequest.swift */; };
-		9C121489207E9FB500121F80 /* WalletOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C121488207E9FB500121F80 /* WalletOverview.swift */; };
-		9C12148D207EACF900121F80 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C12148C207EACF900121F80 /* Notifications.swift */; };
-		9C2AFE111F705C1E00796E9F /* Double+CurrencyToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2AFE101F705C1E00796E9F /* Double+CurrencyToString.swift */; };
-		9C4579AA1F79A2720062676F /* CryptoPriceIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4579A91F79A2720062676F /* CryptoPriceIndex.swift */; };
-		9C4579AC1F817CDF0062676F /* PortfolioWalletLabelRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4579AB1F817CDF0062676F /* PortfolioWalletLabelRowView.swift */; };
-		9C60835A1F60734700FFBAC4 /* PoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083591F60734700FFBAC4 /* PoolRequest.swift */; };
-		9C60835D1F60752A00FFBAC4 /* ZPoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60835C1F60752A00FFBAC4 /* ZPoolPoolRequest.swift */; };
-		9C60835F1F6087BF00FFBAC4 /* YiimpPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60835E1F6087BF00FFBAC4 /* YiimpPoolRequest.swift */; };
-		9C6083611F6087CD00FFBAC4 /* HashRefineryPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083601F6087CD00FFBAC4 /* HashRefineryPoolRequest.swift */; };
-		9C6083631F6094EC00FFBAC4 /* PortfolioPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083621F6094EC00FFBAC4 /* PortfolioPickerViewController.swift */; };
-		9C6083691F60995100FFBAC4 /* OpenPortfolioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083681F60995100FFBAC4 /* OpenPortfolioTableViewCell.swift */; };
-		9C60836E1F61D84700FFBAC4 /* PortfolioPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60836D1F61D84700FFBAC4 /* PortfolioPickerDataSource.swift */; };
-		9C6083711F6304AF00FFBAC4 /* DataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C60836F1F6304AF00FFBAC4 /* DataStore.xcdatamodeld */; };
-		9C6083761F6306D900FFBAC4 /* Portfolio+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083721F6306D900FFBAC4 /* Portfolio+CoreDataClass.swift */; };
-		9C6083771F6306D900FFBAC4 /* Portfolio+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083731F6306D900FFBAC4 /* Portfolio+CoreDataProperties.swift */; };
-		9C6083781F6306D900FFBAC4 /* Wallet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083741F6306D900FFBAC4 /* Wallet+CoreDataClass.swift */; };
-		9C6083791F6306D900FFBAC4 /* Wallet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6083751F6306D900FFBAC4 /* Wallet+CoreDataProperties.swift */; };
-		9C6988B020ACBBD200CDF693 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6988AF20ACBBD200CDF693 /* Settings.storyboard */; };
-		9C6988B420ACCD9000CDF693 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6988B320ACCD9000CDF693 /* SettingsViewController.swift */; };
-		9C6988BA20AE1A1700CDF693 /* BackgroundFetchUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6988B920AE1A1700CDF693 /* BackgroundFetchUpdater.swift */; };
-		9C6988BF20B02BEB00CDF693 /* Locale+TimeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6988BE20B02BEB00CDF693 /* Locale+TimeStyle.swift */; };
-		9C7675571F70791C00F46E7F /* AHashPoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7675561F70791C00F46E7F /* AHashPoolPoolRequest.swift */; };
-		9C7D2AD21F63EA46006E5324 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D2AD11F63EA46006E5324 /* DataStore.swift */; };
-		9C7D2AD51F63F72F006E5324 /* CreatePortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D2AD41F63F72F006E5324 /* CreatePortfolioViewController.swift */; };
-		9CCE2F721F5F1C1100E934AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE2F711F5F1C1100E934AF /* AppDelegate.swift */; };
-		9CCE2F741F5F1C1100E934AF /* AppLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE2F731F5F1C1100E934AF /* AppLoadingViewController.swift */; };
 		9CCE2F771F5F1C1100E934AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCE2F751F5F1C1100E934AF /* Main.storyboard */; };
 		9CCE2F791F5F1C1100E934AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CCE2F781F5F1C1100E934AF /* Assets.xcassets */; };
 		9CCE2F7C1F5F1C1100E934AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCE2F7A1F5F1C1100E934AF /* LaunchScreen.storyboard */; };
 		9CCE2F871F5F1C1100E934AF /* myminermonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE2F861F5F1C1100E934AF /* myminermonitorTests.swift */; };
-		9CCF8EC51F6E9F1C00DE29FC /* CreateWallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCF8EC41F6E9F1C00DE29FC /* CreateWallet.storyboard */; };
-		9CCF8EC71F6EA2C200DE29FC /* CreateWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCF8EC61F6EA2C200DE29FC /* CreateWalletViewController.swift */; };
-		9CD200DD204DE7C700903024 /* PortfolioWalletActiveMinersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD200DC204DE7C700903024 /* PortfolioWalletActiveMinersCell.swift */; };
-		9CE89DC31F672A8E00CDD0BC /* CreatePortfolio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE89DC21F672A8E00CDD0BC /* CreatePortfolio.storyboard */; };
-		9CE89DC51F69B5D800CDD0BC /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE89DC41F69B5D800CDD0BC /* DataStructures.swift */; };
-		9CE89DC71F69B62800CDD0BC /* LoadingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE89DC61F69B62800CDD0BC /* LoadingScreen.storyboard */; };
-		9CE89DC91F6C4E1B00CDD0BC /* PortfolioViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE89DC81F6C4E1B00CDD0BC /* PortfolioViewerViewController.swift */; };
-		9CE89DCB1F6C4E3000CDD0BC /* PortfolioViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE89DCA1F6C4E3000CDD0BC /* PortfolioViewer.storyboard */; };
-		9CE89DCD1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE89DCC1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift */; };
-		9CE89DCF1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE89DCE1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift */; };
-		9CFAE67F204B042C00903CA7 /* BlazePoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFAE67E204B042B00903CA7 /* BlazePoolPoolRequest.swift */; };
-		9CFAE681204B049900903CA7 /* ZergPoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFAE680204B049900903CA7 /* ZergPoolPoolRequest.swift */; };
-		9CFBCF251F85857900D48465 /* WalletSnapshot+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFBCF231F85857900D48465 /* WalletSnapshot+CoreDataClass.swift */; };
-		9CFBCF261F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFBCF241F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift */; };
-		9CFBCF281F8D614200D48465 /* DetailedWalletViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CFBCF271F8D614200D48465 /* DetailedWalletViewer.storyboard */; };
 		C10D16F084F5FE6DF3AE0DDA /* Pods_myminermonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB75C81E21D9F764B01ACD06 /* Pods_myminermonitor.framework */; };
 		E4B7F2FC891BF0FDBB21D98A /* Pods_myminermonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BA33B296F4724007E7B8D1 /* Pods_myminermonitorTests.framework */; };
+		EC5BBE0227442CAF00E4BBC3 /* Wallet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBDF927442CAF00E4BBC3 /* Wallet+CoreDataProperties.swift */; };
+		EC5BBE0327442CAF00E4BBC3 /* Portfolio+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBDFA27442CAF00E4BBC3 /* Portfolio+CoreDataProperties.swift */; };
+		EC5BBE0427442CAF00E4BBC3 /* Wallet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBDFB27442CAF00E4BBC3 /* Wallet+CoreDataClass.swift */; };
+		EC5BBE0527442CAF00E4BBC3 /* WalletSnapshot+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBDFC27442CAF00E4BBC3 /* WalletSnapshot+CoreDataProperties.swift */; };
+		EC5BBE0627442CAF00E4BBC3 /* Portfolio+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBDFD27442CAF00E4BBC3 /* Portfolio+CoreDataClass.swift */; };
+		EC5BBE0727442CAF00E4BBC3 /* DataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBDFE27442CAF00E4BBC3 /* DataStore.xcdatamodeld */; };
+		EC5BBE0827442CAF00E4BBC3 /* WalletSnapshot+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE0027442CAF00E4BBC3 /* WalletSnapshot+CoreDataClass.swift */; };
+		EC5BBE0927442CAF00E4BBC3 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE0127442CAF00E4BBC3 /* DataStore.swift */; };
+		EC5BBE0E27442CB400E4BBC3 /* AppLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE0B27442CB400E4BBC3 /* AppLoadingViewController.swift */; };
+		EC5BBE0F27442CB400E4BBC3 /* LoadingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5BBE0C27442CB400E4BBC3 /* LoadingScreen.storyboard */; };
+		EC5BBE1027442CB400E4BBC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE0D27442CB400E4BBC3 /* AppDelegate.swift */; };
+		EC5BBE1627442CBD00E4BBC3 /* CreateWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE1227442CBD00E4BBC3 /* CreateWalletViewController.swift */; };
+		EC5BBE1727442CBD00E4BBC3 /* CreatePortfolio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5BBE1327442CBD00E4BBC3 /* CreatePortfolio.storyboard */; };
+		EC5BBE1827442CBD00E4BBC3 /* CreatePortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE1427442CBD00E4BBC3 /* CreatePortfolioViewController.swift */; };
+		EC5BBE1927442CBD00E4BBC3 /* CreateWallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5BBE1527442CBD00E4BBC3 /* CreateWallet.storyboard */; };
+		EC5BBE2527442CC200E4BBC3 /* MineMoneyPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE1B27442CC200E4BBC3 /* MineMoneyPoolRequest.swift */; };
+		EC5BBE2627442CC200E4BBC3 /* ZergPoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE1C27442CC200E4BBC3 /* ZergPoolPoolRequest.swift */; };
+		EC5BBE2727442CC200E4BBC3 /* ZPoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE1D27442CC200E4BBC3 /* ZPoolPoolRequest.swift */; };
+		EC5BBE2827442CC200E4BBC3 /* YiimpPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE1E27442CC200E4BBC3 /* YiimpPoolRequest.swift */; };
+		EC5BBE2927442CC200E4BBC3 /* AHashPoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE1F27442CC200E4BBC3 /* AHashPoolPoolRequest.swift */; };
+		EC5BBE2A27442CC200E4BBC3 /* PhiPhiPoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE2027442CC200E4BBC3 /* PhiPhiPoolPoolRequest.swift */; };
+		EC5BBE2B27442CC200E4BBC3 /* HashRefineryPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE2127442CC200E4BBC3 /* HashRefineryPoolRequest.swift */; };
+		EC5BBE2C27442CC200E4BBC3 /* BlockMastersPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE2227442CC200E4BBC3 /* BlockMastersPoolRequest.swift */; };
+		EC5BBE2D27442CC200E4BBC3 /* BlazePoolPoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE2327442CC200E4BBC3 /* BlazePoolPoolRequest.swift */; };
+		EC5BBE2E27442CC200E4BBC3 /* PoolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE2427442CC200E4BBC3 /* PoolRequest.swift */; };
+		EC5BBE3327442CCD00E4BBC3 /* PortfolioPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE3027442CCD00E4BBC3 /* PortfolioPickerViewController.swift */; };
+		EC5BBE3427442CCD00E4BBC3 /* OpenPortfolioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE3127442CCD00E4BBC3 /* OpenPortfolioTableViewCell.swift */; };
+		EC5BBE3527442CCD00E4BBC3 /* PortfolioPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE3227442CCD00E4BBC3 /* PortfolioPickerDataSource.swift */; };
+		EC5BBE3F27442CD200E4BBC3 /* PortfolioWalletLabelRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE3727442CD200E4BBC3 /* PortfolioWalletLabelRowView.swift */; };
+		EC5BBE4027442CD200E4BBC3 /* PortfolioWalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE3827442CD200E4BBC3 /* PortfolioWalletTableViewCell.swift */; };
+		EC5BBE4127442CD200E4BBC3 /* PortfolioViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE3927442CD200E4BBC3 /* PortfolioViewerViewController.swift */; };
+		EC5BBE4227442CD200E4BBC3 /* PortfolioWalletActiveMinersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE3A27442CD200E4BBC3 /* PortfolioWalletActiveMinersCell.swift */; };
+		EC5BBE4327442CD200E4BBC3 /* WalletOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE3B27442CD200E4BBC3 /* WalletOverview.swift */; };
+		EC5BBE4427442CD200E4BBC3 /* DetailedWalletViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5BBE3C27442CD200E4BBC3 /* DetailedWalletViewer.storyboard */; };
+		EC5BBE4527442CD200E4BBC3 /* PortfolioViewerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE3D27442CD200E4BBC3 /* PortfolioViewerTableViewDataSource.swift */; };
+		EC5BBE4627442CD200E4BBC3 /* PortfolioViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5BBE3E27442CD200E4BBC3 /* PortfolioViewer.storyboard */; };
+		EC5BBE4A27442CD600E4BBC3 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5BBE4827442CD600E4BBC3 /* Settings.storyboard */; };
+		EC5BBE4B27442CD600E4BBC3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE4927442CD600E4BBC3 /* SettingsViewController.swift */; };
+		EC5BBE5127442CDA00E4BBC3 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE4D27442CDA00E4BBC3 /* DataStructures.swift */; };
+		EC5BBE5227442CDA00E4BBC3 /* CryptoPriceIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE4E27442CDA00E4BBC3 /* CryptoPriceIndex.swift */; };
+		EC5BBE5327442CDA00E4BBC3 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE4F27442CDA00E4BBC3 /* Notifications.swift */; };
+		EC5BBE5427442CDA00E4BBC3 /* BackgroundFetchUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE5027442CDA00E4BBC3 /* BackgroundFetchUpdater.swift */; };
+		EC5BBE5827442CDE00E4BBC3 /* Double+CurrencyToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE5627442CDE00E4BBC3 /* Double+CurrencyToString.swift */; };
+		EC5BBE5927442CDE00E4BBC3 /* Locale+TimeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5BBE5727442CDE00E4BBC3 /* Locale+TimeStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,36 +74,7 @@
 		2C0C94287F3C529A6899F2CD /* Pods-myminermonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myminermonitorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myminermonitorTests/Pods-myminermonitorTests.release.xcconfig"; sourceTree = "<group>"; };
 		78BA33B296F4724007E7B8D1 /* Pods_myminermonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myminermonitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE19F3E4B916B6CB70C0313 /* Pods-myminermonitorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myminermonitorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myminermonitorTests/Pods-myminermonitorTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9C0C358B20EB7E620052C705 /* BlockMastersPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMastersPoolRequest.swift; sourceTree = "<group>"; };
-		9C0E72EB209B9AFD003BF827 /* MineMoneyPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineMoneyPoolRequest.swift; sourceTree = "<group>"; };
-		9C0E72ED209B9B1D003BF827 /* PhiPhiPoolPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhiPhiPoolPoolRequest.swift; sourceTree = "<group>"; };
-		9C121488207E9FB500121F80 /* WalletOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletOverview.swift; sourceTree = "<group>"; };
-		9C12148C207EACF900121F80 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		9C2AFE101F705C1E00796E9F /* Double+CurrencyToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+CurrencyToString.swift"; sourceTree = "<group>"; };
-		9C4579A91F79A2720062676F /* CryptoPriceIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPriceIndex.swift; sourceTree = "<group>"; };
-		9C4579AB1F817CDF0062676F /* PortfolioWalletLabelRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioWalletLabelRowView.swift; sourceTree = "<group>"; };
-		9C6083591F60734700FFBAC4 /* PoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolRequest.swift; sourceTree = "<group>"; };
-		9C60835C1F60752A00FFBAC4 /* ZPoolPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPoolPoolRequest.swift; sourceTree = "<group>"; };
-		9C60835E1F6087BF00FFBAC4 /* YiimpPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YiimpPoolRequest.swift; sourceTree = "<group>"; };
-		9C6083601F6087CD00FFBAC4 /* HashRefineryPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashRefineryPoolRequest.swift; sourceTree = "<group>"; };
-		9C6083621F6094EC00FFBAC4 /* PortfolioPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPickerViewController.swift; sourceTree = "<group>"; };
-		9C6083681F60995100FFBAC4 /* OpenPortfolioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPortfolioTableViewCell.swift; sourceTree = "<group>"; };
-		9C60836D1F61D84700FFBAC4 /* PortfolioPickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPickerDataSource.swift; sourceTree = "<group>"; };
-		9C6083701F6304AF00FFBAC4 /* DataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataStore.xcdatamodel; sourceTree = "<group>"; };
-		9C6083721F6306D900FFBAC4 /* Portfolio+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Portfolio+CoreDataClass.swift"; path = "../Portfolio+CoreDataClass.swift"; sourceTree = "<group>"; };
-		9C6083731F6306D900FFBAC4 /* Portfolio+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Portfolio+CoreDataProperties.swift"; path = "../Portfolio+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9C6083741F6306D900FFBAC4 /* Wallet+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Wallet+CoreDataClass.swift"; path = "../Wallet+CoreDataClass.swift"; sourceTree = "<group>"; };
-		9C6083751F6306D900FFBAC4 /* Wallet+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Wallet+CoreDataProperties.swift"; path = "../Wallet+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9C6988AF20ACBBD200CDF693 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		9C6988B320ACCD9000CDF693 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		9C6988B920AE1A1700CDF693 /* BackgroundFetchUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFetchUpdater.swift; sourceTree = "<group>"; };
-		9C6988BE20B02BEB00CDF693 /* Locale+TimeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+TimeStyle.swift"; sourceTree = "<group>"; };
-		9C7675561F70791C00F46E7F /* AHashPoolPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHashPoolPoolRequest.swift; sourceTree = "<group>"; };
-		9C7D2AD11F63EA46006E5324 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		9C7D2AD41F63F72F006E5324 /* CreatePortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePortfolioViewController.swift; sourceTree = "<group>"; };
 		9CCE2F6E1F5F1C1100E934AF /* myminermonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myminermonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CCE2F711F5F1C1100E934AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9CCE2F731F5F1C1100E934AF /* AppLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadingViewController.swift; sourceTree = "<group>"; };
 		9CCE2F761F5F1C1100E934AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CCE2F781F5F1C1100E934AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CCE2F7B1F5F1C1100E934AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,23 +82,52 @@
 		9CCE2F821F5F1C1100E934AF /* myminermonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myminermonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CCE2F861F5F1C1100E934AF /* myminermonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myminermonitorTests.swift; sourceTree = "<group>"; };
 		9CCE2F881F5F1C1100E934AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CCF8EC41F6E9F1C00DE29FC /* CreateWallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateWallet.storyboard; sourceTree = "<group>"; };
-		9CCF8EC61F6EA2C200DE29FC /* CreateWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewController.swift; sourceTree = "<group>"; };
-		9CD200DC204DE7C700903024 /* PortfolioWalletActiveMinersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioWalletActiveMinersCell.swift; sourceTree = "<group>"; };
-		9CE89DC21F672A8E00CDD0BC /* CreatePortfolio.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreatePortfolio.storyboard; sourceTree = "<group>"; };
-		9CE89DC41F69B5D800CDD0BC /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
-		9CE89DC61F69B62800CDD0BC /* LoadingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingScreen.storyboard; sourceTree = "<group>"; };
-		9CE89DC81F6C4E1B00CDD0BC /* PortfolioViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewerViewController.swift; sourceTree = "<group>"; };
-		9CE89DCA1F6C4E3000CDD0BC /* PortfolioViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PortfolioViewer.storyboard; sourceTree = "<group>"; };
-		9CE89DCC1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioWalletTableViewCell.swift; sourceTree = "<group>"; };
-		9CE89DCE1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewerTableViewDataSource.swift; sourceTree = "<group>"; };
-		9CFAE67E204B042B00903CA7 /* BlazePoolPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlazePoolPoolRequest.swift; path = /Users/aronspringfield/Documents/myminermonitor/myminermonitor/BlazePoolPoolRequest.swift; sourceTree = "<absolute>"; };
-		9CFAE680204B049900903CA7 /* ZergPoolPoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZergPoolPoolRequest.swift; sourceTree = "<group>"; };
-		9CFBCF231F85857900D48465 /* WalletSnapshot+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletSnapshot+CoreDataClass.swift"; sourceTree = "<group>"; };
-		9CFBCF241F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletSnapshot+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9CFBCF271F8D614200D48465 /* DetailedWalletViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailedWalletViewer.storyboard; sourceTree = "<group>"; };
 		AE53FE709B7E014EE93DF2E9 /* Pods-myminermonitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myminermonitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-myminermonitor/Pods-myminermonitor.release.xcconfig"; sourceTree = "<group>"; };
 		BB75C81E21D9F764B01ACD06 /* Pods_myminermonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myminermonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC5BBDF927442CAF00E4BBC3 /* Wallet+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Wallet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EC5BBDFA27442CAF00E4BBC3 /* Portfolio+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Portfolio+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EC5BBDFB27442CAF00E4BBC3 /* Wallet+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Wallet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EC5BBDFC27442CAF00E4BBC3 /* WalletSnapshot+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WalletSnapshot+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EC5BBDFD27442CAF00E4BBC3 /* Portfolio+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Portfolio+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EC5BBDFF27442CAF00E4BBC3 /* DataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataStore.xcdatamodel; sourceTree = "<group>"; };
+		EC5BBE0027442CAF00E4BBC3 /* WalletSnapshot+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WalletSnapshot+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EC5BBE0127442CAF00E4BBC3 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		EC5BBE0B27442CB400E4BBC3 /* AppLoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLoadingViewController.swift; sourceTree = "<group>"; };
+		EC5BBE0C27442CB400E4BBC3 /* LoadingScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoadingScreen.storyboard; sourceTree = "<group>"; };
+		EC5BBE0D27442CB400E4BBC3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC5BBE1227442CBD00E4BBC3 /* CreateWalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWalletViewController.swift; sourceTree = "<group>"; };
+		EC5BBE1327442CBD00E4BBC3 /* CreatePortfolio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreatePortfolio.storyboard; sourceTree = "<group>"; };
+		EC5BBE1427442CBD00E4BBC3 /* CreatePortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePortfolioViewController.swift; sourceTree = "<group>"; };
+		EC5BBE1527442CBD00E4BBC3 /* CreateWallet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateWallet.storyboard; sourceTree = "<group>"; };
+		EC5BBE1B27442CC200E4BBC3 /* MineMoneyPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineMoneyPoolRequest.swift; sourceTree = "<group>"; };
+		EC5BBE1C27442CC200E4BBC3 /* ZergPoolPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZergPoolPoolRequest.swift; sourceTree = "<group>"; };
+		EC5BBE1D27442CC200E4BBC3 /* ZPoolPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZPoolPoolRequest.swift; sourceTree = "<group>"; };
+		EC5BBE1E27442CC200E4BBC3 /* YiimpPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YiimpPoolRequest.swift; sourceTree = "<group>"; };
+		EC5BBE1F27442CC200E4BBC3 /* AHashPoolPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHashPoolPoolRequest.swift; sourceTree = "<group>"; };
+		EC5BBE2027442CC200E4BBC3 /* PhiPhiPoolPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhiPhiPoolPoolRequest.swift; sourceTree = "<group>"; };
+		EC5BBE2127442CC200E4BBC3 /* HashRefineryPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashRefineryPoolRequest.swift; sourceTree = "<group>"; };
+		EC5BBE2227442CC200E4BBC3 /* BlockMastersPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockMastersPoolRequest.swift; sourceTree = "<group>"; };
+		EC5BBE2327442CC200E4BBC3 /* BlazePoolPoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlazePoolPoolRequest.swift; sourceTree = "<group>"; };
+		EC5BBE2427442CC200E4BBC3 /* PoolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolRequest.swift; sourceTree = "<group>"; };
+		EC5BBE3027442CCD00E4BBC3 /* PortfolioPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPickerViewController.swift; sourceTree = "<group>"; };
+		EC5BBE3127442CCD00E4BBC3 /* OpenPortfolioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPortfolioTableViewCell.swift; sourceTree = "<group>"; };
+		EC5BBE3227442CCD00E4BBC3 /* PortfolioPickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPickerDataSource.swift; sourceTree = "<group>"; };
+		EC5BBE3727442CD200E4BBC3 /* PortfolioWalletLabelRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioWalletLabelRowView.swift; sourceTree = "<group>"; };
+		EC5BBE3827442CD200E4BBC3 /* PortfolioWalletTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioWalletTableViewCell.swift; sourceTree = "<group>"; };
+		EC5BBE3927442CD200E4BBC3 /* PortfolioViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewerViewController.swift; sourceTree = "<group>"; };
+		EC5BBE3A27442CD200E4BBC3 /* PortfolioWalletActiveMinersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioWalletActiveMinersCell.swift; sourceTree = "<group>"; };
+		EC5BBE3B27442CD200E4BBC3 /* WalletOverview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletOverview.swift; sourceTree = "<group>"; };
+		EC5BBE3C27442CD200E4BBC3 /* DetailedWalletViewer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailedWalletViewer.storyboard; sourceTree = "<group>"; };
+		EC5BBE3D27442CD200E4BBC3 /* PortfolioViewerTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewerTableViewDataSource.swift; sourceTree = "<group>"; };
+		EC5BBE3E27442CD200E4BBC3 /* PortfolioViewer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PortfolioViewer.storyboard; sourceTree = "<group>"; };
+		EC5BBE4827442CD600E4BBC3 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		EC5BBE4927442CD600E4BBC3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		EC5BBE4D27442CDA00E4BBC3 /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		EC5BBE4E27442CDA00E4BBC3 /* CryptoPriceIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoPriceIndex.swift; sourceTree = "<group>"; };
+		EC5BBE4F27442CDA00E4BBC3 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		EC5BBE5027442CDA00E4BBC3 /* BackgroundFetchUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundFetchUpdater.swift; sourceTree = "<group>"; };
+		EC5BBE5627442CDE00E4BBC3 /* Double+CurrencyToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+CurrencyToString.swift"; sourceTree = "<group>"; };
+		EC5BBE5727442CDE00E4BBC3 /* Locale+TimeStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locale+TimeStyle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,68 +170,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9C60835B1F60750B00FFBAC4 /* Pool Requests */ = {
-			isa = PBXGroup;
-			children = (
-				9C6083591F60734700FFBAC4 /* PoolRequest.swift */,
-				9C60835C1F60752A00FFBAC4 /* ZPoolPoolRequest.swift */,
-				9C60835E1F6087BF00FFBAC4 /* YiimpPoolRequest.swift */,
-				9C6083601F6087CD00FFBAC4 /* HashRefineryPoolRequest.swift */,
-				9C7675561F70791C00F46E7F /* AHashPoolPoolRequest.swift */,
-				9CFAE67E204B042B00903CA7 /* BlazePoolPoolRequest.swift */,
-				9CFAE680204B049900903CA7 /* ZergPoolPoolRequest.swift */,
-				9C0E72EB209B9AFD003BF827 /* MineMoneyPoolRequest.swift */,
-				9C0E72ED209B9B1D003BF827 /* PhiPhiPoolPoolRequest.swift */,
-				9C0C358B20EB7E620052C705 /* BlockMastersPoolRequest.swift */,
-			);
-			name = "Pool Requests";
-			sourceTree = "<group>";
-		};
-		9C60836C1F61D7FA00FFBAC4 /* Portfolio Picker */ = {
-			isa = PBXGroup;
-			children = (
-				9C6083621F6094EC00FFBAC4 /* PortfolioPickerViewController.swift */,
-				9C60836D1F61D84700FFBAC4 /* PortfolioPickerDataSource.swift */,
-				9C6083681F60995100FFBAC4 /* OpenPortfolioTableViewCell.swift */,
-			);
-			name = "Portfolio Picker";
-			sourceTree = "<group>";
-		};
-		9C60837A1F63080A00FFBAC4 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				9C6083721F6306D900FFBAC4 /* Portfolio+CoreDataClass.swift */,
-				9C6083731F6306D900FFBAC4 /* Portfolio+CoreDataProperties.swift */,
-				9C6083741F6306D900FFBAC4 /* Wallet+CoreDataClass.swift */,
-				9C6083751F6306D900FFBAC4 /* Wallet+CoreDataProperties.swift */,
-				9CFBCF231F85857900D48465 /* WalletSnapshot+CoreDataClass.swift */,
-				9CFBCF241F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift */,
-				9C7D2AD11F63EA46006E5324 /* DataStore.swift */,
-			);
-			name = CoreData;
-			sourceTree = "<group>";
-		};
-		9C6988BD20B02BC700CDF693 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				9C2AFE101F705C1E00796E9F /* Double+CurrencyToString.swift */,
-				9C6988BE20B02BEB00CDF693 /* Locale+TimeStyle.swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
-		9C7D2AD31F63EF8C006E5324 /* Portfolio Viewer */ = {
-			isa = PBXGroup;
-			children = (
-				9CE89DC81F6C4E1B00CDD0BC /* PortfolioViewerViewController.swift */,
-				9CE89DCE1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift */,
-				9CD200DC204DE7C700903024 /* PortfolioWalletActiveMinersCell.swift */,
-				9CE89DCC1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift */,
-				9C4579AB1F817CDF0062676F /* PortfolioWalletLabelRowView.swift */,
-			);
-			name = "Portfolio Viewer";
-			sourceTree = "<group>";
-		};
 		9CCE2F651F5F1C1100E934AF = {
 			isa = PBXGroup;
 			children = (
@@ -255,31 +193,18 @@
 		9CCE2F701F5F1C1100E934AF /* myminermonitor */ = {
 			isa = PBXGroup;
 			children = (
-				9C60837A1F63080A00FFBAC4 /* CoreData */,
-				9C60835B1F60750B00FFBAC4 /* Pool Requests */,
-				9C60836C1F61D7FA00FFBAC4 /* Portfolio Picker */,
-				9C7D2AD31F63EF8C006E5324 /* Portfolio Viewer */,
-				9C6988BD20B02BC700CDF693 /* Extensions */,
-				9CCE2F711F5F1C1100E934AF /* AppDelegate.swift */,
-				9CE89DC41F69B5D800CDD0BC /* DataStructures.swift */,
-				9CCE2F731F5F1C1100E934AF /* AppLoadingViewController.swift */,
-				9C4579A91F79A2720062676F /* CryptoPriceIndex.swift */,
-				9C121488207E9FB500121F80 /* WalletOverview.swift */,
-				9C6988B920AE1A1700CDF693 /* BackgroundFetchUpdater.swift */,
-				9C12148C207EACF900121F80 /* Notifications.swift */,
-				9C6988B320ACCD9000CDF693 /* SettingsViewController.swift */,
-				9C7D2AD41F63F72F006E5324 /* CreatePortfolioViewController.swift */,
-				9CCF8EC61F6EA2C200DE29FC /* CreateWalletViewController.swift */,
-				9C60836F1F6304AF00FFBAC4 /* DataStore.xcdatamodeld */,
 				9CCE2F781F5F1C1100E934AF /* Assets.xcassets */,
 				9CCE2F751F5F1C1100E934AF /* Main.storyboard */,
-				9CE89DC21F672A8E00CDD0BC /* CreatePortfolio.storyboard */,
-				9CCF8EC41F6E9F1C00DE29FC /* CreateWallet.storyboard */,
-				9CE89DCA1F6C4E3000CDD0BC /* PortfolioViewer.storyboard */,
 				9CCE2F7A1F5F1C1100E934AF /* LaunchScreen.storyboard */,
-				9CE89DC61F69B62800CDD0BC /* LoadingScreen.storyboard */,
-				9C6988AF20ACBBD200CDF693 /* Settings.storyboard */,
-				9CFBCF271F8D614200D48465 /* DetailedWalletViewer.storyboard */,
+				EC5BBE0A27442CB400E4BBC3 /* Launch */,
+				EC5BBDF827442CAF00E4BBC3 /* CoreData */,
+				EC5BBE1A27442CC200E4BBC3 /* Pool Requests */,
+				EC5BBE1127442CBD00E4BBC3 /* Create */,
+				EC5BBE2F27442CCD00E4BBC3 /* Portfolio Picker */,
+				EC5BBE3627442CD200E4BBC3 /* Portfolio Viewer */,
+				EC5BBE4727442CD600E4BBC3 /* Settings */,
+				EC5BBE5527442CDE00E4BBC3 /* Extensions */,
+				EC5BBE4C27442CDA00E4BBC3 /* Misc. */,
 				9CCE2F7D1F5F1C1100E934AF /* Info.plist */,
 			);
 			path = myminermonitor;
@@ -292,6 +217,113 @@
 				9CCE2F881F5F1C1100E934AF /* Info.plist */,
 			);
 			path = myminermonitorTests;
+			sourceTree = "<group>";
+		};
+		EC5BBDF827442CAF00E4BBC3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BBDFE27442CAF00E4BBC3 /* DataStore.xcdatamodeld */,
+				EC5BBE0127442CAF00E4BBC3 /* DataStore.swift */,
+				EC5BBDFD27442CAF00E4BBC3 /* Portfolio+CoreDataClass.swift */,
+				EC5BBDFA27442CAF00E4BBC3 /* Portfolio+CoreDataProperties.swift */,
+				EC5BBDFB27442CAF00E4BBC3 /* Wallet+CoreDataClass.swift */,
+				EC5BBDF927442CAF00E4BBC3 /* Wallet+CoreDataProperties.swift */,
+				EC5BBE0027442CAF00E4BBC3 /* WalletSnapshot+CoreDataClass.swift */,
+				EC5BBDFC27442CAF00E4BBC3 /* WalletSnapshot+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		EC5BBE0A27442CB400E4BBC3 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BBE0C27442CB400E4BBC3 /* LoadingScreen.storyboard */,
+				EC5BBE0B27442CB400E4BBC3 /* AppLoadingViewController.swift */,
+				EC5BBE0D27442CB400E4BBC3 /* AppDelegate.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		EC5BBE1127442CBD00E4BBC3 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BBE1327442CBD00E4BBC3 /* CreatePortfolio.storyboard */,
+				EC5BBE1527442CBD00E4BBC3 /* CreateWallet.storyboard */,
+				EC5BBE1427442CBD00E4BBC3 /* CreatePortfolioViewController.swift */,
+				EC5BBE1227442CBD00E4BBC3 /* CreateWalletViewController.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		EC5BBE1A27442CC200E4BBC3 /* Pool Requests */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BBE2427442CC200E4BBC3 /* PoolRequest.swift */,
+				EC5BBE1F27442CC200E4BBC3 /* AHashPoolPoolRequest.swift */,
+				EC5BBE2327442CC200E4BBC3 /* BlazePoolPoolRequest.swift */,
+				EC5BBE2227442CC200E4BBC3 /* BlockMastersPoolRequest.swift */,
+				EC5BBE1B27442CC200E4BBC3 /* MineMoneyPoolRequest.swift */,
+				EC5BBE2127442CC200E4BBC3 /* HashRefineryPoolRequest.swift */,
+				EC5BBE2027442CC200E4BBC3 /* PhiPhiPoolPoolRequest.swift */,
+				EC5BBE1E27442CC200E4BBC3 /* YiimpPoolRequest.swift */,
+				EC5BBE1C27442CC200E4BBC3 /* ZergPoolPoolRequest.swift */,
+				EC5BBE1D27442CC200E4BBC3 /* ZPoolPoolRequest.swift */,
+			);
+			path = "Pool Requests";
+			sourceTree = "<group>";
+		};
+		EC5BBE2F27442CCD00E4BBC3 /* Portfolio Picker */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BBE3027442CCD00E4BBC3 /* PortfolioPickerViewController.swift */,
+				EC5BBE3227442CCD00E4BBC3 /* PortfolioPickerDataSource.swift */,
+				EC5BBE3127442CCD00E4BBC3 /* OpenPortfolioTableViewCell.swift */,
+			);
+			path = "Portfolio Picker";
+			sourceTree = "<group>";
+		};
+		EC5BBE3627442CD200E4BBC3 /* Portfolio Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BBE3E27442CD200E4BBC3 /* PortfolioViewer.storyboard */,
+				EC5BBE3C27442CD200E4BBC3 /* DetailedWalletViewer.storyboard */,
+				EC5BBE3B27442CD200E4BBC3 /* WalletOverview.swift */,
+				EC5BBE3927442CD200E4BBC3 /* PortfolioViewerViewController.swift */,
+				EC5BBE3D27442CD200E4BBC3 /* PortfolioViewerTableViewDataSource.swift */,
+				EC5BBE3727442CD200E4BBC3 /* PortfolioWalletLabelRowView.swift */,
+				EC5BBE3827442CD200E4BBC3 /* PortfolioWalletTableViewCell.swift */,
+				EC5BBE3A27442CD200E4BBC3 /* PortfolioWalletActiveMinersCell.swift */,
+			);
+			path = "Portfolio Viewer";
+			sourceTree = "<group>";
+		};
+		EC5BBE4727442CD600E4BBC3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BBE4827442CD600E4BBC3 /* Settings.storyboard */,
+				EC5BBE4927442CD600E4BBC3 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		EC5BBE4C27442CDA00E4BBC3 /* Misc. */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BBE5027442CDA00E4BBC3 /* BackgroundFetchUpdater.swift */,
+				EC5BBE4D27442CDA00E4BBC3 /* DataStructures.swift */,
+				EC5BBE4E27442CDA00E4BBC3 /* CryptoPriceIndex.swift */,
+				EC5BBE4F27442CDA00E4BBC3 /* Notifications.swift */,
+			);
+			path = Misc.;
+			sourceTree = "<group>";
+		};
+		EC5BBE5527442CDE00E4BBC3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EC5BBE5627442CDE00E4BBC3 /* Double+CurrencyToString.swift */,
+				EC5BBE5727442CDE00E4BBC3 /* Locale+TimeStyle.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,14 +420,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CCE2F7C1F5F1C1100E934AF /* LaunchScreen.storyboard in Resources */,
+				EC5BBE4627442CD200E4BBC3 /* PortfolioViewer.storyboard in Resources */,
+				EC5BBE1927442CBD00E4BBC3 /* CreateWallet.storyboard in Resources */,
+				EC5BBE1727442CBD00E4BBC3 /* CreatePortfolio.storyboard in Resources */,
+				EC5BBE0F27442CB400E4BBC3 /* LoadingScreen.storyboard in Resources */,
 				9CCE2F791F5F1C1100E934AF /* Assets.xcassets in Resources */,
+				EC5BBE4A27442CD600E4BBC3 /* Settings.storyboard in Resources */,
 				9CCE2F771F5F1C1100E934AF /* Main.storyboard in Resources */,
-				9CE89DCB1F6C4E3000CDD0BC /* PortfolioViewer.storyboard in Resources */,
-				9CE89DC31F672A8E00CDD0BC /* CreatePortfolio.storyboard in Resources */,
-				9CFBCF281F8D614200D48465 /* DetailedWalletViewer.storyboard in Resources */,
-				9C6988B020ACBBD200CDF693 /* Settings.storyboard in Resources */,
-				9CE89DC71F69B62800CDD0BC /* LoadingScreen.storyboard in Resources */,
-				9CCF8EC51F6E9F1C00DE29FC /* CreateWallet.storyboard in Resources */,
+				EC5BBE4427442CD200E4BBC3 /* DetailedWalletViewer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,44 +547,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CFAE67F204B042C00903CA7 /* BlazePoolPoolRequest.swift in Sources */,
-				9C6083781F6306D900FFBAC4 /* Wallet+CoreDataClass.swift in Sources */,
-				9CE89DC91F6C4E1B00CDD0BC /* PortfolioViewerViewController.swift in Sources */,
-				9CFBCF261F85857900D48465 /* WalletSnapshot+CoreDataProperties.swift in Sources */,
-				9C7D2AD21F63EA46006E5324 /* DataStore.swift in Sources */,
-				9C6988B420ACCD9000CDF693 /* SettingsViewController.swift in Sources */,
-				9CE89DCF1F6C63B500CDD0BC /* PortfolioViewerTableViewDataSource.swift in Sources */,
-				9C6083761F6306D900FFBAC4 /* Portfolio+CoreDataClass.swift in Sources */,
-				9C6083631F6094EC00FFBAC4 /* PortfolioPickerViewController.swift in Sources */,
-				9C12148D207EACF900121F80 /* Notifications.swift in Sources */,
-				9C4579AC1F817CDF0062676F /* PortfolioWalletLabelRowView.swift in Sources */,
-				9C2AFE111F705C1E00796E9F /* Double+CurrencyToString.swift in Sources */,
-				9C4579AA1F79A2720062676F /* CryptoPriceIndex.swift in Sources */,
-				9CD200DD204DE7C700903024 /* PortfolioWalletActiveMinersCell.swift in Sources */,
-				9C6083691F60995100FFBAC4 /* OpenPortfolioTableViewCell.swift in Sources */,
-				9C6988BA20AE1A1700CDF693 /* BackgroundFetchUpdater.swift in Sources */,
-				9C7675571F70791C00F46E7F /* AHashPoolPoolRequest.swift in Sources */,
-				9C0C358C20EB7E620052C705 /* BlockMastersPoolRequest.swift in Sources */,
-				9CE89DCD1F6C54FA00CDD0BC /* PortfolioWalletTableViewCell.swift in Sources */,
-				9C6083611F6087CD00FFBAC4 /* HashRefineryPoolRequest.swift in Sources */,
-				9C6083771F6306D900FFBAC4 /* Portfolio+CoreDataProperties.swift in Sources */,
-				9C7D2AD51F63F72F006E5324 /* CreatePortfolioViewController.swift in Sources */,
-				9CE89DC51F69B5D800CDD0BC /* DataStructures.swift in Sources */,
-				9CCE2F741F5F1C1100E934AF /* AppLoadingViewController.swift in Sources */,
-				9C6083711F6304AF00FFBAC4 /* DataStore.xcdatamodeld in Sources */,
-				9C60835F1F6087BF00FFBAC4 /* YiimpPoolRequest.swift in Sources */,
-				9CCF8EC71F6EA2C200DE29FC /* CreateWalletViewController.swift in Sources */,
-				9C121489207E9FB500121F80 /* WalletOverview.swift in Sources */,
-				9C0E72EE209B9B1D003BF827 /* PhiPhiPoolPoolRequest.swift in Sources */,
-				9CCE2F721F5F1C1100E934AF /* AppDelegate.swift in Sources */,
-				9C6988BF20B02BEB00CDF693 /* Locale+TimeStyle.swift in Sources */,
-				9CFAE681204B049900903CA7 /* ZergPoolPoolRequest.swift in Sources */,
-				9C0E72EC209B9AFD003BF827 /* MineMoneyPoolRequest.swift in Sources */,
-				9C6083791F6306D900FFBAC4 /* Wallet+CoreDataProperties.swift in Sources */,
-				9C60835D1F60752A00FFBAC4 /* ZPoolPoolRequest.swift in Sources */,
-				9C60835A1F60734700FFBAC4 /* PoolRequest.swift in Sources */,
-				9C60836E1F61D84700FFBAC4 /* PortfolioPickerDataSource.swift in Sources */,
-				9CFBCF251F85857900D48465 /* WalletSnapshot+CoreDataClass.swift in Sources */,
+				EC5BBE1027442CB400E4BBC3 /* AppDelegate.swift in Sources */,
+				EC5BBE4527442CD200E4BBC3 /* PortfolioViewerTableViewDataSource.swift in Sources */,
+				EC5BBE4B27442CD600E4BBC3 /* SettingsViewController.swift in Sources */,
+				EC5BBE3327442CCD00E4BBC3 /* PortfolioPickerViewController.swift in Sources */,
+				EC5BBE0327442CAF00E4BBC3 /* Portfolio+CoreDataProperties.swift in Sources */,
+				EC5BBE5127442CDA00E4BBC3 /* DataStructures.swift in Sources */,
+				EC5BBE2627442CC200E4BBC3 /* ZergPoolPoolRequest.swift in Sources */,
+				EC5BBE2E27442CC200E4BBC3 /* PoolRequest.swift in Sources */,
+				EC5BBE1827442CBD00E4BBC3 /* CreatePortfolioViewController.swift in Sources */,
+				EC5BBE0527442CAF00E4BBC3 /* WalletSnapshot+CoreDataProperties.swift in Sources */,
+				EC5BBE4127442CD200E4BBC3 /* PortfolioViewerViewController.swift in Sources */,
+				EC5BBE5927442CDE00E4BBC3 /* Locale+TimeStyle.swift in Sources */,
+				EC5BBE0827442CAF00E4BBC3 /* WalletSnapshot+CoreDataClass.swift in Sources */,
+				EC5BBE5327442CDA00E4BBC3 /* Notifications.swift in Sources */,
+				EC5BBE3427442CCD00E4BBC3 /* OpenPortfolioTableViewCell.swift in Sources */,
+				EC5BBE3527442CCD00E4BBC3 /* PortfolioPickerDataSource.swift in Sources */,
+				EC5BBE5427442CDA00E4BBC3 /* BackgroundFetchUpdater.swift in Sources */,
+				EC5BBE4227442CD200E4BBC3 /* PortfolioWalletActiveMinersCell.swift in Sources */,
+				EC5BBE0E27442CB400E4BBC3 /* AppLoadingViewController.swift in Sources */,
+				EC5BBE0627442CAF00E4BBC3 /* Portfolio+CoreDataClass.swift in Sources */,
+				EC5BBE5227442CDA00E4BBC3 /* CryptoPriceIndex.swift in Sources */,
+				EC5BBE2D27442CC200E4BBC3 /* BlazePoolPoolRequest.swift in Sources */,
+				EC5BBE5827442CDE00E4BBC3 /* Double+CurrencyToString.swift in Sources */,
+				EC5BBE2727442CC200E4BBC3 /* ZPoolPoolRequest.swift in Sources */,
+				EC5BBE1627442CBD00E4BBC3 /* CreateWalletViewController.swift in Sources */,
+				EC5BBE0227442CAF00E4BBC3 /* Wallet+CoreDataProperties.swift in Sources */,
+				EC5BBE2A27442CC200E4BBC3 /* PhiPhiPoolPoolRequest.swift in Sources */,
+				EC5BBE2827442CC200E4BBC3 /* YiimpPoolRequest.swift in Sources */,
+				EC5BBE0427442CAF00E4BBC3 /* Wallet+CoreDataClass.swift in Sources */,
+				EC5BBE4027442CD200E4BBC3 /* PortfolioWalletTableViewCell.swift in Sources */,
+				EC5BBE2927442CC200E4BBC3 /* AHashPoolPoolRequest.swift in Sources */,
+				EC5BBE4327442CD200E4BBC3 /* WalletOverview.swift in Sources */,
+				EC5BBE2B27442CC200E4BBC3 /* HashRefineryPoolRequest.swift in Sources */,
+				EC5BBE3F27442CD200E4BBC3 /* PortfolioWalletLabelRowView.swift in Sources */,
+				EC5BBE2C27442CC200E4BBC3 /* BlockMastersPoolRequest.swift in Sources */,
+				EC5BBE0927442CAF00E4BBC3 /* DataStore.swift in Sources */,
+				EC5BBE0727442CAF00E4BBC3 /* DataStore.xcdatamodeld in Sources */,
+				EC5BBE2527442CC200E4BBC3 /* MineMoneyPoolRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,12 +834,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9C60836F1F6304AF00FFBAC4 /* DataStore.xcdatamodeld */ = {
+		EC5BBDFE27442CAF00E4BBC3 /* DataStore.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9C6083701F6304AF00FFBAC4 /* DataStore.xcdatamodel */,
+				EC5BBDFF27442CAF00E4BBC3 /* DataStore.xcdatamodel */,
 			);
-			currentVersion = 9C6083701F6304AF00FFBAC4 /* DataStore.xcdatamodel */;
+			currentVersion = EC5BBDFF27442CAF00E4BBC3 /* DataStore.xcdatamodel */;
 			path = DataStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
