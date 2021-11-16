@@ -6,11 +6,11 @@
 //  Copyright © 2017 Aron Springfield. All rights reserved.
 //
 
-enum Currency : String {
+enum Currency: String {
     case unknown = "unknown"
     case bitcoin = "BTC"
-    case signatum = "SIGT"
     case verge = "XVG"
+    case vertcoin = "VTC"
     
     init(safeRawValue: String) {
         self = Currency(rawValue: safeRawValue) ?? .unknown
