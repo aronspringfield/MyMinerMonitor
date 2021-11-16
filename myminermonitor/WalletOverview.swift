@@ -26,12 +26,11 @@ struct WalletOverview {
                 totalPaid += wallet.totalPaid
                 totalPast24Hours += wallet.profitIn24Hours
                 totalPast1Hour += wallet.profitIn1Hour
-                for miner in wallet.activeMiners {
-                    activeMiners.append(miner)
-                }
-            }
-            else {
+            } else {
                 // TODO: convert to bitcoin and add
+            }
+            for miner in wallet.activeMiners {
+                activeMiners.append(miner)
             }
         }
     }
